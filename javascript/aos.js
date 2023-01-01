@@ -4,14 +4,8 @@ var animatedElements = $("[aos]");
 // Initialize visibility for AOS elements
 $(window).ready(function() {
     for (var i = 0; i < animatedElements.length; i++) {
-        $(animatedElements[i]).addClass("invisible");
+        $(animatedElements[i]).updateViewportVisibility();
     }
-
-    setTimeout(function() {
-        for (var i = 0; i < animatedElements.length; i++) {
-            $(animatedElements[i]).updateViewportVisibility();
-        }
-    }, 1);
 });
 
 // Update visibility for AOS elements
@@ -39,7 +33,7 @@ $.fn.updateViewportVisibility = function() {
     }
 
     if (Math.abs(viewportBottom - $(window).height()) > 60) {
-        viewportBottom *= 0.9;
+        viewportBottom -= $(window).outerHeight() * 0.1;
     }
 
     if (elementBottom > viewportTop && elementTop < viewportBottom) {

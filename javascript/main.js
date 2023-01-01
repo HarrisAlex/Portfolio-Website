@@ -4,8 +4,6 @@ var slideshowButtons = $(".slideshow-button");
 var slideDescriptions = $(".slide-copy-description");
 var slideBackgrounds = $(".slide-background");
 
-ChangeSlide(1);
-
 function HandleChangeSlide(number) {
     if (currentTimeoutID !== null) {
         clearTimeout(currentTimeoutID);
@@ -27,33 +25,6 @@ function ChangeSlide(number) {
 
     lastSlide = number;
 }
-
-// Hide descriptions if on mobile
-if (IsOnMobile()) {
-    for (var i = 0; i < slideDescriptions.length; i++) {
-       CloseDescription(i + 1);
-    }
-}
-else {
-    for (var i = 0; i < slideDescriptions.length; i++) {
-        OpenDescription(i + 1);
-    }
-}
-
-$(window).resize(function() {
-    ChangeSlide(lastSlide);
-
-    if (IsOnMobile()) {
-        for (var i = 0; i < slideDescriptions.length; i++) {
-            CloseDescription(i + 1);
-        }
-    }
-    else {
-        for (var i = 0; i < slideDescriptions.length; i++) {
-            OpenDescription(i + 1);
-        }
-    }
-});
 
 var currentTimeoutID = setTimeout(NextSlide, 8000);
 
@@ -108,3 +79,9 @@ function CloseDescription(number) {
     $(slideDescriptions[number - 1]).addClass("hidden");
     $(slideBackgrounds[number - 1]).removeClass("hidden");
 }
+
+$(window).resize(function() {
+    ChangeSlide(lastSlide);
+});
+
+ChangeSlide(1);
