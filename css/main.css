@@ -33,6 +33,19 @@ body {
     color: var(--text);
 }
 
+body.hidden {
+    display: none;
+    background-color: var(--accent);
+}
+
+content {
+    background-color: var(--accent);
+}
+
+content.hidden {
+    background-color: var(--accent);
+}
+
 a {
     text-decoration: none;
 }
@@ -272,6 +285,7 @@ section {
 
 #section-introduction img {
     width: 41rem;
+    height: auto;
 
     margin-bottom: 0.5rem;
 }
@@ -473,6 +487,10 @@ footer * {
 #icon-linkedin * {
     min-height: 21px;
     height: 3rem;
+
+    width: auto;
+
+    transition: opacity 0.25s var(--s-curve);
 }
 
 #icon-linkedin:hover * {
@@ -482,10 +500,19 @@ footer * {
 #icon-github * {
     min-height: 21px;
     height: 3rem;
+
+    transition: opacity 0.25s var(--s-curve);
 } 
 
 #icon-github:hover * { 
     opacity: 75%;
+}
+
+.notransition {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
 }
 
 
@@ -614,6 +641,8 @@ footer * {
     #icon-linkedin * {
         min-height: 21px;
         height: var(--mobile-icon-height);
+
+        width: auto;
     }
     
     #icon-github * {

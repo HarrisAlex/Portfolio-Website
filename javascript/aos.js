@@ -1,5 +1,14 @@
 // Vars
 var animatedElements = $("[aos]");
+var content = $(".content");
+
+$("#mobile-nav-cross").on("click", function() {
+    if (!content.hasClass("hidden")) {
+        for (var i = 0; i < animatedElements.length; i++) {
+            $(animatedElements[i]).updateViewportVisibility();
+        }
+    }
+});
 
 // Initialize visibility for AOS elements
 $(window).ready(function() {
@@ -22,17 +31,24 @@ $.fn.updateViewportVisibility = function() {
         $(this).addClass("invisible");
     }
 
+    if ($(this).closest(".content").length > 0) {
+        if (content.hasClass("hidden"))
+        {
+            return;
+        }
+    }
+
     var elementTop = $(this).offset().top;
     var elementBottom = elementTop + $(this).outerHeight();
 
     var viewportTop = $(window).scrollTop();
-    var viewportBottom = viewportTop + $(window).outerHeight();
+    var viewportBottom = viewportTop + $(window).height();
 
     if (viewportTop > 60) {
         viewportTop += $(window).outerHeight() * 0.1;
     }
 
-    if (Math.abs(viewportBottom - $(window).height()) > 60) {
+    if (Math.abs(viewportBottom - $(document).height()) > 60) {
         viewportBottom -= $(window).outerHeight() * 0.1;
     }
 

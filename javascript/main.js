@@ -49,12 +49,14 @@ function IsOnMobile() {
 // Mobile nav
 function OpenMobileNav() {
     $("#mobile-nav").addClass("active");
-    $("body").css({"height": "100vh", "overflow-y" : "hidden"});
+    $(".content").css({"height": "100vh", "overflow-y" : "hidden"});
+    $(".content").addClass("hidden");
 }
 
 function CloseMobileNav() {
     $("#mobile-nav").removeClass("active");
-    $("body").css({"height": "", "overflow-y" : ""});
+    $(".content").css({"height": "", "overflow-y" : ""});
+    $(".content").removeClass("hidden");
 }
 
 // Mobile slideshow
@@ -85,3 +87,47 @@ $(window).resize(function() {
 });
 
 ChangeSlide(1);
+
+var content = $(".content");
+content.addClass("hidden");
+
+$(document).ready(function () {
+    content.removeClass("hidden");
+
+    if (IsOnMobile()) {    
+        if (document.referrer != "") {
+            var url = new URL(document.referrer);
+    
+            //127.0.0.1 comparison used for local testing, remove when deploying
+            if (url.hostname === "alexharris.design" || url.hostname === "127.0.0.1") {
+                $("#mobile-nav-cross").addClass("notransition");
+                $("#mobile-nav-cross").offset();
+                $("#mobile-nav-cross").removeClass("notransition");
+    
+                $("#mobile-nav-logo").addClass("notransition");
+                $("#mobile-nav-logo").offset();
+                $("#mobile-nav-logo").removeClass("notransition");
+    
+                $("#mobile-nav-divider").addClass("notransition");
+                $("#mobile-nav-divider").offset();
+                $("#mobile-nav-divider").removeClass("notransition");
+            }
+        }
+    } 
+});
+
+if (IsOnMobile()) {
+    if (document.referrer != "") {
+        var url = new URL(document.referrer);
+
+        //127.0.0.1 comparison used for local testing, remove when deploying
+        if (url.hostname === "alexharris.design" || url.hostname === "127.0.0.1") {
+            $("#mobile-nav").addClass("notransition");
+            OpenMobileNav();
+            $("#mobile-nav").offset();
+            $("#mobile-nav").removeClass("notransition");
+
+            CloseMobileNav();
+        }
+    }
+} 
