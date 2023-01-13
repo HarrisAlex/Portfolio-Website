@@ -1,5 +1,5 @@
 // Vars
-var animatedElements = $("[aos]");
+var animatedElements;
 var content = $(".content");
 
 $("#mobile-nav-cross").on("click", function() {
@@ -11,30 +11,35 @@ $("#mobile-nav-cross").on("click", function() {
 });
 
 // Initialize visibility for AOS elements
-$(window).ready(function() {
+$(document).ready(function() {
+    animatedElements = $("[aos]");
+
     for (var i = 0; i < animatedElements.length; i++) {
-        $(animatedElements[i]).updateViewportVisibility();
+            $(animatedElements[i]).updateViewportVisibility();
     }
 });
+
+setInterval(function() {
+
+}, 200);
 
 // Update visibility for AOS elements
 $(window).scroll(function () {
     for (var i = 0; i < animatedElements.length; i++) {
-        $(animatedElements[i]).updateViewportVisibility();
+        if (!$(animatedElements[i]).hasClass("visible")) {
+            $(animatedElements[i]).updateViewportVisibility();
+        }
     }
 });
 
 $.fn.updateViewportVisibility = function() {
-    if ($(this).hasClass("visible")) {
-        return;
-    } else {
-        $(this).addClass("invisible");
-    }
+    $(this).addClass("invisible");
 
     if ($(this).closest(".content").length > 0) {
-        if (content.hasClass("hidden"))
-        {
-            return;
+        if (content.hasClass("hidden")) {
+            if ($(window).outerWidth() < 721) {
+                return;
+            }
         }
     }
 
@@ -53,9 +58,7 @@ $.fn.updateViewportVisibility = function() {
     }
 
     if (elementBottom > viewportTop && elementTop < viewportBottom) {
-        if ($(this).hasClass("invisible")) {
-            $(this).removeClass("invisible");
-            $(this).addClass("visible");
-        }
+        $(this).removeClass("invisible");
+        $(this).addClass("visible");
     }
 }

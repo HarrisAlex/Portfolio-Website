@@ -1,8 +1,8 @@
 // Slideshow
 var lastSlide = 1;
 var slideshowButtons = $(".slideshow-button");
-var slideDescriptions = $(".slide-copy-description");
-var slideBackgrounds = $(".slide-background");
+var slideDescriptions = $(".card-copy-description");
+var slideBackgrounds = $(".card-background");
 
 function HandleChangeSlide(number) {
     if (currentTimeoutID !== null) {
@@ -49,7 +49,7 @@ function IsOnMobile() {
 // Mobile nav
 function OpenMobileNav() {
     $("#mobile-nav").addClass("active");
-    $(".content").css({"height": "100vh", "overflow-y" : "hidden"});
+    $(".content").css({"height": "calc(100vh - 2.6rem)", "overflow-y" : "hidden"});
     $(".content").addClass("hidden");
 }
 
