@@ -1,0 +1,21 @@
+#project-thumbnail {
+    margin-top: 1.5rem;
+
+    width: 70%;
+    height: auto;
+}
+
+main {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#title-section {
+    align-items: center;
+}

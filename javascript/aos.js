@@ -1,38 +1,8 @@
-// Vars
-var animatedElements;
-var content = $(".content");
-
-$("#mobile-nav-cross").on("click", function() {
-    if (!content.hasClass("hidden")) {
-        for (var i = 0; i < animatedElements.length; i++) {
-            $(animatedElements[i]).updateViewportVisibility();
-        }
-    }
-});
-
-// Initialize visibility for AOS elements
-$(document).ready(function() {
-    animatedElements = $("[aos]");
-
-    for (var i = 0; i < animatedElements.length; i++) {
-            $(animatedElements[i]).updateViewportVisibility();
-    }
-});
-
-setInterval(function() {
-
-}, 200);
-
-// Update visibility for AOS elements
-$(window).scroll(function () {
-    for (var i = 0; i < animatedElements.length; i++) {
-        if (!$(animatedElements[i]).hasClass("visible")) {
-            $(animatedElements[i]).updateViewportVisibility();
-        }
-    }
-});
-
 $.fn.updateViewportVisibility = function() {
+    if ($(this).hasClass("visible")) {
+        return;
+    }
+    
     $(this).addClass("invisible");
 
     if ($(this).closest(".content").length > 0) {
@@ -62,3 +32,32 @@ $.fn.updateViewportVisibility = function() {
         $(this).addClass("visible");
     }
 }
+
+// Vars
+var animatedElements = $("[aos]");
+var content = $(".content");
+
+$("#mobile-nav-cross").on("click", function() {
+    if (!content.hasClass("hidden")) {
+        for (var i = 0; i < animatedElements.length; i++) {
+            $(animatedElements[i]).updateViewportVisibility();
+        }
+    }
+});
+
+$(document).ready(function() {
+    animatedElements = $("[aos]");
+
+    for (var i = 0; i < animatedElements.length; i++) {
+        $(animatedElements[i]).updateViewportVisibility();
+    }
+});
+
+// Update visibility for AOS elements
+$(window).scroll(function () {
+    for (var i = 0; i < animatedElements.length; i++) {
+        if (!$(animatedElements[i]).hasClass("visible")) {
+            $(animatedElements[i]).updateViewportVisibility();
+        }
+    }
+});

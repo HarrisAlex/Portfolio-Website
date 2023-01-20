@@ -1,5 +1,5 @@
 :root {
-    --understated-text: #C0C0C0;
+    --understated-text: #cdcdcd;
     --background: #171717;
     --lighter-background: #313131;
     --ucf-accent: #FFC904;
@@ -37,17 +37,8 @@ body {
     color: var(--text);
 }
 
-body.hidden {
+.content.hidden {
     display: none;
-    background-color: var(--accent);
-}
-
-content {
-    background-color: var(--accent);
-    box-sizing: border-box;
-}
-
-content.hidden {
     background-color: var(--accent);
 }
 
@@ -55,47 +46,47 @@ a {
     text-decoration: none;
 }
 
+a:link {
+    color: var(--text);
+}
+
 a:visited {
     color: var(--text);
 }
 
 h1 {
-    font-size: 6rem;
-    font-weight: normal;
-
+    font-size: 3.5rem;
+    font-weight: 700;
     margin: 0;
+
+    line-height: 200%;
 }
 
 h2 {
-    font-size: 3.5rem;
-    font-weight: lighter;
-
+    font-size: 2.7rem;
+    font-weight: 600;
     margin: 0;
 }
 
 h3 {
-    font-size: 3rem;
-    font-weight: normal;
-
+    font-size: 2rem;
+    font-weight: 500;
     margin: 0;
 }
 
-h5 {
-    font-size: 2.1rem;
+h4 {
+    font-size: 1.5rem;
     font-weight: normal;
-
-    margin: 0;
-}
-
-h6 {
-    font-size: 1.75rem;
-    font-weight: normal;
-    
     margin: 0;
 }
 
 p {
+    font-size: 1.2rem;
     margin: 0;
+}
+
+.understated {
+    color: var(--understated-text);
 }
 
 nav {
@@ -272,8 +263,13 @@ section {
     margin-bottom: 2rem;
 }
 
-#section-introduction h1 {
+#introduction-hi {
+    font-size: 6rem;
     line-height: 1;
+}
+
+#introduction-description {
+    font-size: 2.1rem;
 }
 
 #section-introduction span {
@@ -296,6 +292,7 @@ section {
 }
 
 #section-projects-highlight h2 {
+    align-self: center;
     line-height: 1;
 }
 
@@ -373,6 +370,8 @@ section {
     filter: brightness(60%) blur(20px);
 
     position: relative;
+
+    transition: filter 0.5s var(--s-curve);
 }
 
 .card-copy {
@@ -392,8 +391,6 @@ section {
 .card-copy-titles {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    align-self: flex-end;
 }
 
 .card-copy-titles h6 {
@@ -406,7 +403,7 @@ section {
     display: flex;
     align-items: center;
 
-    transition: opacity 1s var(--s-curve);
+    transition: opacity 0.5s var(--s-curve);
 }
 
 .button {
@@ -536,26 +533,6 @@ footer * {
         padding-right: 1rem;
     }
 
-    h1 {
-        font-size: 5rem;
-    }
-
-    h2 {
-        font-size: 2.4rem;
-    }
-
-    h3 {
-        font-size: 2.1rem;
-    }
-
-    h5 {
-        font-size: 1.7rem;
-    }
-
-    h6 {
-        font-size: 1.25rem;
-    }
-
     nav {
         flex-direction: row-reverse;
         justify-content: space-between;
@@ -634,7 +611,7 @@ footer * {
     }
 
     .card-background.hidden {
-        filter: brightness(45%) blur(20px);
+        filter: brightness(70%) blur(1rem);
     }
 
     footer {
