@@ -5,7 +5,9 @@
         <meta name="author" content="Alex Harris">
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
         <meta name="description" content="This is the portfolio website for Alex Harris, a current student at the University of Central Florida and a future UX / UI designer.">
-        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="stylesheet" href="css/project-card.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/aos.css">
         <script src="javascript/jquery-3.6.3.min.js"></script>
@@ -68,28 +70,13 @@
                     <h2 aos="far slide-right fade slow">Highlight Projects</h2>
                     <div id="slideshow" aos="fade">
                         <div id="slideshow-wrapper">
-                            <div class="card" onclick="HandleToggleDescription(1)">
-                                <div class="card-content">
-                                    <div class="card-copy">
-                                        <div class="card-copy-titles">
-                                            <h3>Project Title</h3>
-                                            <h4>Project Subtitle</h4>
-                                        </div>
-                                        <div class="card-copy-description">
-                                            <p>This is a project description of a project that I have worked on and I am now repeating myself so anyway this is a project description of a project that I have worked on and I am now repeating myself so anyway.</p>    
-                                        </div>
-                                        <a href="#" class="button">Learn More</a>
-                                    </div>
-                                    <img src="images/Portrait.webp" width="2048" height="1356" alt="Portrait of Alex Harris">
-                                </div>
-                                <div class="card-background" style="background-image: url(images/Portrait.webp)"></div>
-                            </div>
+                            
                         </div>
                     </div>
                     <div id="slideshow-button-wrapper" aos="fade slide-up">
-                        <div class="slideshow-button active" onclick="HandleChangeSlide(1)"></div>
-                        <div class="slideshow-button" onclick="HandleChangeSlide(2)"></div>
-                        <div class="slideshow-button" onclick="HandleChangeSlide(3)"></div>
+                        <div class="slideshow-button active"></div>
+                        <div class="slideshow-button"></div>
+                        <div class="slideshow-button"></div>
                     </div>
                 </section>
             </main>
@@ -109,7 +96,7 @@
             </footer>
         </div>
         
-        <script src="javascript/slideshow.js"></script>
+        <script type="module" src="javascript/slideshow.js"></script>
         <script src="javascript/main.js"></script>
         <script src="javascript/aos.js"></script>
     </body>

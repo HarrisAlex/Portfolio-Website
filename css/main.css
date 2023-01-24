@@ -307,12 +307,10 @@ section {
     height: 30rem;
 }
 
-#slideshow > * {
-    box-sizing: border-box;
-}
-
 #slideshow-wrapper {
     display: flex;
+
+    height: 100%;
 
     overflow-x: visible;
 
@@ -327,83 +325,17 @@ section {
 }
 
 .card {
+    height: auto;
     flex-shrink: 0;
 
-    box-sizing: border-box;
-
-    border-radius: 2.25rem;
     scroll-snap-align: start;
-
-    width: 100%;
-    height: 30rem;
 
     position: relative;
     overflow: hidden;
-
-    border: solid 5px var(--accent);
-    box-shadow: inset 0px 0px 20px black;
 }
 
 .card-content {
-    display: flex;
-    align-items: center;
-    height: 100%;
     box-sizing: border-box;
-    padding: 1.9rem;
-}
-
-.card-content > * {
-    z-index: 1;
-}
-
-.card-background {
-    width: 100%;
-    height: 100%;
-
-    top: -100%;
-
-    z-index: -10;
-
-    background-size: cover;
-    background-position: center;
-
-    filter: brightness(60%) blur(20px);
-
-    position: relative;
-
-    transition: filter 0.5s var(--s-curve);
-}
-
-.card-copy {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-
-    margin-right: 1rem;
-}
-
-.card-copy > * {
-    margin-bottom: 0.5rem;
-    margin-top: 0.5rem;
-}
-
-.card-copy-titles {
-    display: flex;
-    flex-direction: column;
-}
-
-.card-copy-titles h6 {
-    color: var(--understated-text);
-}
-
-.card-copy-description {
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-
-    transition: opacity 0.5s var(--s-curve);
 }
 
 .button {
@@ -425,12 +357,6 @@ section {
 
 .button:hover {
     background-color: var(--alternate-accent);
-}
-
-.card img {
-    width: 50%;
-    height:fit-content;
-    border-radius: 2.25rem;
 }
 
 #slideshow-button-wrapper {

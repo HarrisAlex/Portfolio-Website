@@ -1,24 +1,4 @@
-class Project {
-    constructor(title, subtitle, description, url, thumbnail, thumbnailWidth, thumbnailHeight, thumbnailAltText) {
-        this.title = title;
-        this.subtitle = subtitle;
-        this.description = description;
-        this.url = url;
-        this.thumbnail = thumbnail;
-        this.thumbnailWidth = thumbnailWidth;
-        this.thumbnailHeight = thumbnailHeight;
-        this.thumbnailAltText = thumbnailAltText;
-    }
-
-    title = "Project Title";
-    subtitle = "Project Subtitle";
-    description = "Project description";
-    url = "projects.html";
-    thumbnail = "images/Portrait.webp";
-    thumbnailWidth = "200";
-    thumbnailHeight = "200";
-    thumbnailAltText = "Project thumbnail alt text";
-}
+import { Project, CreateProjectCard } from "./modules/project-card.js";
 
 var cityAlleyProject = new Project(
     "City Alley", 
@@ -54,59 +34,14 @@ var inGameComputerProject = new Project(
     "#",
     "https://i0.wp.com/among-us.me/wp-content/uploads/2021/09/90-130cm-Among-Us-Long-Pillow-Cushion-Sleepng-Pillow-Animal-Doll-Kawaii-Figure-Peluche-Christmas-Gift.jpg_640x640.jpg?fit=640%2C640&ssl=1",
     "In-Game Computer"
-)
+);
 
-function GenerateProjectThumbnail(project) {
-    var card = document.createElement("div");
-    $(card).addClass("card");
-    $(card).attr("aos", "fade slow slide-up far");
+var container = $("#projects-container");
 
-    var content = document.createElement("div");
-    $(content).addClass("card-content");
-    card.append(content);
-
-    var titles = document.createElement("div");
-    $(titles).addClass("card-copy-titles");
-    content.append(titles);
-
-    var title = document.createElement("h2");
-    title.innerHTML = project.title;
-    titles.append(title);
-
-    var subtitle = document.createElement("h3");
-    subtitle.innerHTML = project.subtitle;
-    $(subtitle).addClass("understated");
-    titles.append(subtitle);
-
-    var descriptionContainer = document.createElement("div");
-    $(descriptionContainer).addClass("card-copy-description");
-    content.append(descriptionContainer);
-
-    var description = document.createElement("p");
-    description.innerHTML = project.description;
-    descriptionContainer.append(description);
-    
-    var learnMoreButton = learnMoreButton = document.createElement("a");
-    learnMoreButton.innerHTML = "Learn more";
-    learnMoreButton.href = project.url;
-    $(learnMoreButton).addClass("button");
-
-    content.append(learnMoreButton);
-
-    var mobileThumbnail = document.createElement("div");
-    $(mobileThumbnail).addClass("card-background");
-    $(mobileThumbnail).css("background-image", "url(" + project.thumbnail + ")");
-    card.append(mobileThumbnail);
-
-    $("#projects-container").append(card);
-
-    $(card).on("click", function() {HandleToggleDescription(descriptionContainer, mobileThumbnail)});
-}
-
-GenerateProjectThumbnail(cityAlleyProject);
-GenerateProjectThumbnail(creepyHotelHallway);
-GenerateProjectThumbnail(horrorGameMenuProject);
-GenerateProjectThumbnail(inGameComputerProject);
+CreateProjectCard(cityAlleyProject, container);
+CreateProjectCard(creepyHotelHallway, container);
+CreateProjectCard(horrorGameMenuProject, container);
+CreateProjectCard(inGameComputerProject, container);
 
 var cardDescriptions = $(".card-copy-description");
 var cardBackgrounds = $(".card-background");
