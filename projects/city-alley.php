@@ -71,7 +71,7 @@
                 </section>
             </main>
             <div class="divider" aos="horizontal-grow slow"></div>
-            <!--#config timefmt=”%A” --> <!--#echo var=”DATE_LOCAL” -->
+            <?php include '../templates/footer.html'; ?>
         </div>
         <script src="../javascript/main.js"></script>
         <script src="../javascript/aos.js"></script>
