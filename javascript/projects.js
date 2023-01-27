@@ -42,29 +42,3 @@ CreateProjectCard(cityAlleyProject, container);
 CreateProjectCard(creepyHotelHallway, container);
 CreateProjectCard(horrorGameMenuProject, container);
 CreateProjectCard(inGameComputerProject, container);
-
-var cardDescriptions = $(".card-copy-description");
-var cardBackgrounds = $(".card-background");
-
-function HandleToggleDescription(description, background) {
-    $(description).toggleClass("hidden");
-    $(background).toggleClass("hidden");
-}
-
-for (var i = 0; i < cardDescriptions.length; i++) {
-    $(cardDescriptions[i]).addClass("hidden");
-}
-
-for (var i = 0; i < cardBackgrounds.length; i++) {
-    $(cardBackgrounds[i]).removeClass("hidden");
-}
-
-$(window).resize(function() {
-    for (var i = 0; i < cardDescriptions.length; i++) {
-        $(cardDescriptions[i]).addClass("hidden");
-    }
-
-    for (var i = 0; i < cardBackgrounds.length; i++) {
-        $(cardBackgrounds[i]).removeClass("hidden");
-    }
-});

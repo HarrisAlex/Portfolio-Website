@@ -61,10 +61,10 @@ function HandleChangeSlide(number) {
 }
 
 function ChangeSlide(number) {
-    // Position slide   
     CloseDescription(lastSlide);
 
-    $("#slideshow-wrapper").css({"transform" : "translateX(-" + (number - 1) * $(".card").outerWidth() + "px)"});
+    // Position slide   
+    $("#slideshow-wrapper").css({"transform" : "translateX(-" + (((number - 1) * $(".card").outerWidth()) + (160 * (number - 0.5))) + "px)"});
 
     for (var i = 0; i < slideshowButtons.length; i++) {
         $(slideshowButtons[i]).removeClass("active");
@@ -117,4 +117,4 @@ $(window).resize(function() {
     ChangeSlide(lastSlide);
 });
 
-ChangeSlide(1);
+ChangeSlide(2);
