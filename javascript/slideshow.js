@@ -117,4 +117,7 @@ $(window).resize(function() {
     ChangeSlide(lastSlide);
 });
 
-ChangeSlide(2);
+$(document).ready(function() {
+    lastSlide = 2;
+    ChangeSlide(2);
+});

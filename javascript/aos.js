@@ -28,8 +28,16 @@ $.fn.updateViewportVisibility = function() {
     }
 
     if (elementBottom > viewportTop && elementTop < viewportBottom) {
-        $(this).removeClass("invisible");
-        $(this).addClass("visible");
+        if ($(this).attr("aos-offset") !== undefined) {
+            setTimeout(function() {
+                $(this).removeClass("invisible");
+                $(this).addClass("visible");
+            }, $(this).attr("aos-offset"));
+        }
+        else {
+            $(this).removeClass("invisible");
+            $(this).addClass("visible");
+        }
     }
 }
 
@@ -39,9 +47,15 @@ var content = $(".content");
 
 $("#mobile-nav-cross").on("click", function() {
     if (!content.hasClass("hidden")) {
-        for (var i = 0; i < animatedElements.length; i++) {
+        if (!$(animatedElements[i]).hasClass("visible")) {
             $(animatedElements[i]).updateViewportVisibility();
         }
+    }
+});
+
+$("#nav-hamburger").click(function() {
+    for (var i = 0; i < animatedElements.length; i++) {
+        $(animatedElements[i]).updateViewportVisibility();
     }
 });
 
