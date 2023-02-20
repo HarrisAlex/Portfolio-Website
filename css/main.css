@@ -44,6 +44,8 @@ body {
 
 a {
     text-decoration: none;
+
+    transition: color 0.25s var(--s-curve);
 }
 
 a:link {
@@ -54,18 +56,25 @@ a:visited {
     color: var(--text);
 }
 
+a:hover {
+    color: var(--accent);
+}
+
 h1 {
     font-size: 3.5rem;
     font-weight: 700;
     margin: 0;
 
     line-height: 200%;
+
+    letter-spacing: 0.25rem;
 }
 
 h2 {
     font-size: 2.7rem;
     font-weight: 600;
     margin: 0;
+    margin-bottom: 1rem;
 }
 
 h3 {
@@ -87,6 +96,11 @@ p {
 
 .understated {
     color: var(--understated-text);
+}
+
+.understated-subtitle {
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
 }
 
 nav {
@@ -243,6 +257,11 @@ nav {
     background-color: var(--accent);
 
     height: 3px;
+}
+
+main {
+    max-width: 1300px;
+    margin: auto;
 }
 
 section {

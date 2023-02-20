@@ -1,21 +1,43 @@
-#project-thumbnail {
-    margin-top: 1.5rem;
+#title-section {
+    display: flex;
+    flex-direction: column;
+}
 
-    width: 70%;
+figure img {
+    width: 100%;
     height: auto;
 }
 
-main {
-    margin-left: 2rem;
-    margin-right: 2rem;
-}
-
-section {
+#project-thumbnail {
+    align-self: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+
+    margin-top: 1.5rem;
+
+    width: 80%;
+    height: auto;
 }
 
-#title-section {
-    align-items: center;
+#project-thumbnail img {
+    align-self: center;
+}
+
+article {
+    display: grid;
+    grid-template-columns: 40% 60%;
+
+    width: 100%;
+
+    gap: 1rem;
+
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+}
+
+article p {
+    font-family: Georgia, 'Times New Roman', Garamond, serif;
+    letter-spacing: 0.02rem;
+    line-height: 140%;
+    word-spacing: 0.1rem;
 }

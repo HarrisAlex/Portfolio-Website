@@ -28,6 +28,11 @@ $.fn.updateViewportVisibility = function() {
     }
 
     if (elementBottom > viewportTop && elementTop < viewportBottom) {
+        if ($(this).attr("aos-delay") != null && $(this).attr("aos-delay") != "") {
+            var delay = $(this).attr("aos-delay");
+            $(this).css("transition-delay", delay + "ms");
+        }
+
         $(this).removeClass("invisible");
         $(this).addClass("visible");
     }
