@@ -43,7 +43,7 @@ export function CreateProjectCard(project, parent) {
     titles.append(subtitle);
 
     var description = document.createElement("p");
-    $(description).addClass("card-description");
+    $(description).addClass("card-description hidden");
     description.innerHTML = project.description;
     content.append(description);
     
@@ -61,7 +61,33 @@ export function CreateProjectCard(project, parent) {
 
     $(parent).append(card);
 
-    $(card).on("click", function() {HandleToggleDescription(descriptionContainer, mobileThumbnail)});
+    $(card).on("click", function() {HandleToggleDescription(description, mobileThumbnail)});
 
     return card;
 }
+
+function HandleToggleDescription(description, background) {
+    $(description).toggleClass("hidden");
+    $(background).toggleClass("hidden");
+}
+
+var cardDescriptions = $(".card-description");
+var cardBackgrounds = $(".card-background");
+
+for (var i = 0; i < cardDescriptions.length; i++) {
+    $(cardDescriptions[i]).addClass("hidden");
+}
+
+for (var i = 0; i < cardBackgrounds.length; i++) {
+    $(cardBackgrounds[i]).removeClass("hidden");
+}
+
+$(window).resize(function() {
+    for (var i = 0; i < cardDescriptions.length; i++) {
+        $(cardDescriptions[i]).addClass("hidden");
+    }
+
+    for (var i = 0; i < cardBackgrounds.length; i++) {
+        $(cardBackgrounds[i]).removeClass("hidden");
+    }
+});

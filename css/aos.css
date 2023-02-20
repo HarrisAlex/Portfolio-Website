@@ -62,14 +62,26 @@
     opacity: 0;
 }
 
-.visible {
+.visible[aos] {
     transition: all 0.5s var(--s-curve);
 }
 
-.visible[aos*="fast"] {
+.visible[aos~="fast"] {
     transition: all 0.3s var(--s-curve);
 }
 
-.visible[aos*="slow"] {
+.visible[aos~="slow"] {
+    transition: all 1s var(--s-curve);
+}
+
+.invisible[aos][aos~="fire-multiple"] {
+    transition: all 0.5s var(--s-curve);
+}
+
+.invisible[aos~="fast"][aos~="fire-multiple"] {
+    transition: all 0.3s var(--s-curve);
+}
+
+.invisible[aos~="slow"][aos~="fire-multiple"] {
     transition: all 1s var(--s-curve);
 }

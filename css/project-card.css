@@ -46,6 +46,10 @@
     transition: opacity 0.5s var(--s-curve);
 }
 
+.card-description.hidden {
+    opacity: 0;
+}
+
 .card-background {
     height: 100%;
 
