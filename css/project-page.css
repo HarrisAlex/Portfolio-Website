@@ -37,12 +37,7 @@ article p {
         gap: 1.5rem;
     }
 
-    main {
-        margin: 0 0.5rem 0 0.5rem;
-    }
-
     article {
         grid-template-columns: 100%;
-        padding: 1.5rem 0 1.5rem 0;
     }
 }

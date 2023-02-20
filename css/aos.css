@@ -88,7 +88,7 @@
 
 
 @media screen and (max-width: 720px) {
-    .invisible[aos-mobile] {
+    .invisible[aos][aos-mobile] {
         transform: none;
         transform-origin: center;
         opacity: 1;
