@@ -5,7 +5,7 @@ var cityAlleyProject = new Project(
     "A dark, quiet alley", 
     "Among Us is a 2018 online multiplayer social deduction game developed and published by American game studio Innersloth. The game was inspired by the party game Mafia and the science fiction horror film The Thing.",
     "projects/city-alley.html",
-    "images/projects/city-alley-preview.jpg",
+    "images/projects/city-alley-preview.webp",
     "City Alley Render"
 );
 
@@ -14,7 +14,7 @@ var creepyHotelHallway = new Project(
     "A creepy, dark hotel hallway", 
     "Among Us is a 2018 online multiplayer social deduction game developed and published by American game studio Innersloth. The game was inspired by the party game Mafia and the science fiction horror film The Thing.",
     "projects/creepy-hallway.html",
-    "images/projects/creepy-hotel-hallway-preview.jpg",
+    "images/projects/creepy-hotel-hallway-preview.webp",
     "Creepy Hotel Hallway Render"
 );
 
@@ -23,7 +23,7 @@ var horrorGameMenuProject = new Project(
     "A simple concept for a horror game's main menu", 
     "Among Us is a 2018 online multiplayer social deduction game developed and published by American game studio Innersloth. The game was inspired by the party game Mafia and the science fiction horror film The Thing.",
     "#",
-    "images/projects/horror-game-menu-preview.jpg",
+    "images/projects/horror-game-menu-preview.webp",
     "Horror Game Menu Concept"
 );
 
