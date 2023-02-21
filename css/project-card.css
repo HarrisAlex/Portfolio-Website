@@ -28,6 +28,12 @@
     padding: 1.9rem;
 }
 
+.card-title-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+}
+
 .card-title {
     font-size: 2.1rem;
     font-weight: 600;

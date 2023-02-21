@@ -1,13 +1,10 @@
 export class Project {
-    constructor(title, subtitle, description, url, thumbnail, thumbnailWidth, thumbnailHeight, thumbnailAltText) {
+    constructor(title, subtitle, description, url, thumbnail) {
         this.title = title;
         this.subtitle = subtitle;
         this.description = description;
         this.url = url;
         this.thumbnail = thumbnail;
-        this.thumbnailWidth = thumbnailWidth;
-        this.thumbnailHeight = thumbnailHeight;
-        this.thumbnailAltText = thumbnailAltText;
     }
 
     title = "Project Title";
@@ -15,9 +12,6 @@ export class Project {
     description = "Project description";
     url = "projects.html";
     thumbnail = "images/Portrait.webp";
-    thumbnailWidth = "200";
-    thumbnailHeight = "200";
-    thumbnailAltText = "Project thumbnail alt text";
 }
 
 export function CreateProjectCard(project, parent) {
@@ -30,6 +24,7 @@ export function CreateProjectCard(project, parent) {
     card.append(content);
 
     var titles = document.createElement("div");
+    $(titles).addClass("card-title-container");
     content.append(titles);
 
     var title = document.createElement("p");

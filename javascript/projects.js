@@ -3,42 +3,29 @@ import { Project, CreateProjectCard } from "./modules/project-card.js";
 var cityAlleyProject = new Project(
     "City Alley", 
     "A dark, quiet alley", 
-    "Among Us is a 2018 online multiplayer social deduction game developed and published by American game studio Innersloth. The game was inspired by the party game Mafia and the science fiction horror film The Thing.",
+    "I created this 3D rendering of an alley using Blender. My goal for this project was achieving photorealism using a combination of lighting and texturing.",
     "projects/city-alley.html",
-    "images/projects/city-alley-preview.webp",
-    "City Alley Render"
+    "images/projects/city-alley-preview.webp"
 );
 
 var creepyHotelHallway = new Project(
     "Creepy Hotel Hallway", 
     "A creepy, dark hotel hallway", 
-    "Among Us is a 2018 online multiplayer social deduction game developed and published by American game studio Innersloth. The game was inspired by the party game Mafia and the science fiction horror film The Thing.",
+    "I created this simple 3D rendering a creepy hotel hallway using Blender as a fun, small project to practice my skills.",
     "projects/creepy-hallway.html",
-    "images/projects/creepy-hotel-hallway-preview.webp",
-    "Creepy Hotel Hallway Render"
+    "images/projects/creepy-hotel-hallway-preview.webp"
 );
 
-var horrorGameMenuProject = new Project(
-    "Horror Game Main Menu", 
-    "A simple concept for a horror game's main menu", 
-    "Among Us is a 2018 online multiplayer social deduction game developed and published by American game studio Innersloth. The game was inspired by the party game Mafia and the science fiction horror film The Thing.",
-    "#",
-    "images/projects/horror-game-menu-preview.webp",
-    "Horror Game Menu Concept"
-);
-
-var inGameComputerProject = new Project(
-    "In-Game Computer",
-    "Fully functional computer within a video game for story purposes",
-    "",
-    "#",
-    "https://i0.wp.com/among-us.me/wp-content/uploads/2021/09/90-130cm-Among-Us-Long-Pillow-Cushion-Sleepng-Pillow-Animal-Doll-Kawaii-Figure-Peluche-Christmas-Gift.jpg_640x640.jpg?fit=640%2C640&ssl=1",
-    "In-Game Computer"
+var coffeeShopWebsite = new Project(
+    "Coffee Shop Website",
+    "A mock-up for a cafe",
+    "I created this mock-up for a coffee shop website using HTML and CSS. I wanted to practice my skills with Flexbox and responsive design.",
+    "projects/coffee-shop-website.html",
+    "images/projects/coffee-shop-website-preview.webp"
 );
 
 var container = $("#projects-container");
 
 CreateProjectCard(cityAlleyProject, container);
 CreateProjectCard(creepyHotelHallway, container);
-CreateProjectCard(horrorGameMenuProject, container);
-CreateProjectCard(inGameComputerProject, container);
+CreateProjectCard(coffeeShopWebsite, container);

@@ -48,16 +48,13 @@ body {
 
 a {
     text-decoration: none;
+    color: var(--ucf-accent);
 
-    transition: color 0.25s var(--s-curve);
+    transition: all 0.25s var(--s-curve);
 }
 
-a:link {
-    color: var(--text);
-}
-
-a:visited {
-    color: var(--text);
+a:link, a:visited {
+    color: var(--ucf-accent);
 }
 
 a:hover {
@@ -134,7 +131,7 @@ nav {
     display: flex;
 }
 
-.nav-link {
+.nav-link, .nav-link:link, .nav-link:visited {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -152,6 +149,7 @@ nav {
 
 .nav-link:hover .nav-link-line, .nav-link:focus .nav-link-line {
     background-color: var(--accent);
+    transform: scaleX(1);
 }
 
 .nav-link-line {
@@ -162,12 +160,16 @@ nav {
     height: 4px;
     border-radius: 4px;
 
-    transition: background-color 0.25s var(--s-curve);
+    transform: scaleX(0);
+
+    transition: all 0.25s var(--s-curve);
 }
 
 .nav-link.active .nav-link-line {
     background-color: var(--accent);
     opacity: 100%;
+
+    transform: scaleX(1);
 }
 
 .nav-link p {
@@ -317,12 +319,10 @@ section {
 }
 
 #slideshow {
-    width: 90%;
-    margin: 3rem;
-    margin-left: 5%;
-    margin-right: 5%;
+    width: 70%;
+    margin: 0 5% 0 5%;
 
-    height: 40rem;
+    height: 35rem;
 }
 
 #slideshow-wrapper {
@@ -361,6 +361,7 @@ section {
 
 .button {
     background-color: var(--accent);
+    color: var(--text);
     border-radius: 2rem;
 
     padding: 0.5rem;
@@ -374,6 +375,10 @@ section {
     width: fit-content;
 
     transition: background-color 0.25s var(--s-curve);
+}
+
+.button:visited, .button:link {
+    color: var(--text);
 }
 
 .button:hover {
@@ -424,6 +429,7 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    row-gap: 1rem;
 }
 
 #icon-linkedin {
