@@ -1,11 +1,5 @@
 var content = $(".content");
 
-var isNavLoaded = false;
-// Load nav and footer
-$("nav").load("/templates/nav.html", function() { isNavLoaded = true; SetActiveNavLink(); });
-$("#mobile-nav").load("/templates/mobile-nav.html");
-$("footer").load("/templates/footer.html");
-
 // Check if on mobile device
 function IsOnMobile() {
     return $(window).outerWidth() < 721;
@@ -35,12 +29,34 @@ function CloseMobileNav() {
     $("#mobile-nav-divider").addClass("invisible");
 }
 
+$("nav").load("/templates/nav.html", function() { SetActiveNavLink(); });
+$("#mobile-nav").load("/templates/mobile-nav.html");
+$("footer").load("/templates/footer.html");
+
+function SetActiveNavLink() {
+    // Set active nav link
+    switch (window.location.pathname) {
+        case "/":
+        case "/index.html":
+            $("#nav-home-link").addClass("active");
+            break;
+        case "/projects.html":
+            $("#nav-projects-link").addClass("active");
+            break;
+        case "/contact":
+        case "/contact.html":
+            $("#nav-contact-link").addClass("active");
+            break;
+    }
+
+    if (window.location.pathname.includes("projects")) {
+        $("#nav-projects-link").addClass("active");
+    }
+}
+
 // Wait for page to load before showing content
 $(document).ready(function () {
     content.removeClass("hidden");
-
-    if (isNavLoaded)
-        SetActiveNavLink();
 
     // Open mobile nav if coming from another page on the site
     if (IsOnMobile()) {    
@@ -64,27 +80,6 @@ $(document).ready(function () {
         }
     } 
 });
-
-function SetActiveNavLink() {
-// Set active nav link
-    switch (window.location.pathname) {
-        case "/":
-        case "/index.html":
-            $("#nav-home-link").addClass("active");
-            break;
-        case "/projects.html":
-            $("#nav-projects-link").addClass("active");
-            break;
-        case "/contact":
-        case "/contact.html":
-            $("#nav-contact-link").addClass("active");
-            break;
-    }
-
-    if (window.location.pathname.includes("projects")) {
-        $("#nav-projects-link").addClass("active");
-    }
-}
 
 // Open mobile nav if coming from another page on the site
 if (IsOnMobile()) {

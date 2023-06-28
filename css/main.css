@@ -255,6 +255,10 @@ nav {
     margin-bottom: 1.3rem;
 }
 
+.mobile-nav-link:link, .mobile-nav-link:visited{
+    color: var(--text);
+}
+
 .divider {
     background-color: var(--accent);
 

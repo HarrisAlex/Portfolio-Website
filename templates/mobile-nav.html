@@ -1,4 +1,24 @@
-<script src="/javascript/mobile-nav-initialize.js"></script>
+<script>
+    if ($(window).outerWidth() < 721) {
+        if (document.referrer != "") {
+            var url = new URL(document.referrer);
+
+            if (url.hostname === "alexharris.design" || url.hostname === "127.0.0.1") {
+                $("#mobile-nav-cross").addClass("notransition");
+                $("#mobile-nav-cross").addClass("visible");
+                $("#mobile-nav-cross").removeClass("notransition");
+
+                $("#mobile-nav-logo").addClass("notransition");
+                $("#mobile-nav-logo").addClass("visible");
+                $("#mobile-nav-logo").removeClass("notransition");
+
+                $("#mobile-nav-divider").addClass("notransition");
+                $("#mobile-nav-divider").addClass("visible");
+                $("#mobile-nav-divider").removeClass("notransition");
+            }
+        }
+    }
+</script>
 <svg id="mobile-nav-logo" aos="fade slow fire-multiple" aos-offset="1000" id="Layer_3" data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000.15 567.46">
     <polygon points=".43 567.46 218.23 0 289.91 0 507.7 567.46 430.88 567.46 253.62 70.13 74.68 567.46 .43 567.46"/>
     <polygon points="867.15 0 867.15 253.73 575.15 253.73 575.15 0 508.42 0 508.15 567.46 575.15 567.46 575.15 313.73 867.15 313.73 867.15 567.46 933.15 567.46 933.15 0 867.15 0"/>
