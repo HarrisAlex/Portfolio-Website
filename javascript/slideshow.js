@@ -1,37 +1,11 @@
-import { Project, CreateProjectCard } from "./modules/project-card.js";
-
-var cityAlleyProject = new Project(
-    "City Alley", 
-    "A dark, quiet alley", 
-    "Among Us is a 2018 online multiplayer social deduction game developed and published by American game studio Innersloth. The game was inspired by the party game Mafia and the science fiction horror film The Thing.",
-    "projects/city-alley.html",
-    "images/projects/city-alley-preview.jpg",
-    "City Alley Render"
-);
-
-var creepyHotelHallway = new Project(
-    "Creepy Hotel Hallway", 
-    "A creepy, dark hotel hallway", 
-    "Among Us is a 2018 online multiplayer social deduction game developed and published by American game studio Innersloth. The game was inspired by the party game Mafia and the science fiction horror film The Thing.",
-    "projects/creepy-hallway.html",
-    "images/projects/creepy-hotel-hallway-preview.jpg",
-    "Creepy Hotel Hallway Render"
-);
-
-var horrorGameMenuProject = new Project(
-    "Horror Game Main Menu", 
-    "A simple concept for a horror game's main menu", 
-    "Among Us is a 2018 online multiplayer social deduction game developed and published by American game studio Innersloth. The game was inspired by the party game Mafia and the science fiction horror film The Thing.",
-    "#",
-    "images/projects/horror-game-menu-preview.jpg",
-    "Horror Game Menu Concept"
-);
+import { CreateProjectCard } from "./modules/project-card.js";
+import { cityAlleyProject, creepyHotelHallway, coffeeShopWebsite } from "./projects-data.js";
 
 var slideshowWrapper = $("#slideshow-wrapper");
 var cards = [];
 cards.push(CreateProjectCard(cityAlleyProject, slideshowWrapper));
 cards.push(CreateProjectCard(creepyHotelHallway, slideshowWrapper));
-cards.push(CreateProjectCard(horrorGameMenuProject, slideshowWrapper));
+cards.push(CreateProjectCard(coffeeShopWebsite, slideshowWrapper));
 
 // Slideshow
 var lastSlide = 1;
