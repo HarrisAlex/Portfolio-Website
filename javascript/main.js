@@ -1,3 +1,4 @@
+import { CreateFooter } from "./modules/footer.js";
 import { CreateNavbar } from "./modules/navbar.js";
 
 var content = $(".content");
@@ -34,8 +35,9 @@ function CloseMobileNav() {
 CreateNavbar($("nav"));
 SetActiveNavLink();
 
+
 $("#mobile-nav").load("/templates/mobile-nav.html");
-$("footer").load("/templates/footer.html");
+CreateFooter($("footer"));
 
 function SetActiveNavLink() {
     // Set active nav link
