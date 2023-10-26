@@ -1,3 +1,5 @@
+import { CreateNavbar } from "./modules/navbar.js";
+
 var content = $(".content");
 
 // Check if on mobile device
@@ -29,7 +31,9 @@ function CloseMobileNav() {
     $("#mobile-nav-divider").addClass("invisible");
 }
 
-$("nav").load("/templates/nav.html", function() { SetActiveNavLink(); });
+CreateNavbar($("nav"));
+SetActiveNavLink();
+
 $("#mobile-nav").load("/templates/mobile-nav.html");
 $("footer").load("/templates/footer.html");
 
