@@ -53,12 +53,8 @@ a {
     transition: all 0.25s var(--s-curve);
 }
 
-a:link, a:visited {
-    color: var(--ucf-accent);
-}
-
 a:hover {
-    color: var(--accent);
+    color: var(--alternate-accent);
 }
 
 h1 {
@@ -183,7 +179,7 @@ nav {
 #mobile-nav {
     display: none;
 
-    background-color: var(--accent);
+    background-color: var(--background);
 
     box-sizing: border-box;
 
@@ -222,6 +218,12 @@ nav {
     stroke-width: 3rem;
 
     cursor: pointer;
+
+    transition: all 0.25s var(--s-curve);
+}
+
+#mobile-nav-cross:hover {
+    stroke: var(--accent);
 }
 
 #mobile-nav-logo {
@@ -255,8 +257,12 @@ nav {
     margin-bottom: 1.3rem;
 }
 
-.mobile-nav-link:link, .mobile-nav-link:visited{
-    color: var(--text);
+.mobile-nav-link.active {
+    color: var(--ucf-accent);
+}
+
+.mobile-nav-link:hover {
+    color: var(--accent);
 }
 
 .divider {

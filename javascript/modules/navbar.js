@@ -8,5 +8,5 @@ export function CreateNavbar(container) {
     $(navLinkList).append('<a class="nav-link" href="/projects.html" id="nav-projects-link"><div class="nav-link-line"></div><p>Projects</p></a>');
     $(navLinkList).append('<a class="nav-link" href="/contact.html" id="nav-contact-link"><div class="nav-link-line"></div><p>Contact</p></a>');
 
-    $(container).append('<svg id="nav-hamburger" aos="far slide-left slow" onclick="OpenMobileNav()" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 966 723.24"><line x1="40" y1="40" x2="925.11" y2="40"></line><line x1="40.89" y1="361.62" x2="926" y2="361.62"></line><line x1="40.89" y1="683.24" x2="926" y2="683.24"></line></svg>');
+    $(container).append('<svg id="nav-hamburger" aos="far slide-left slow" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 966 723.24"><line x1="40" y1="40" x2="925.11" y2="40"></line><line x1="40.89" y1="361.62" x2="926" y2="361.62"></line><line x1="40.89" y1="683.24" x2="926" y2="683.24"></line></svg>');
 }

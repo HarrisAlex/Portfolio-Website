@@ -44,8 +44,10 @@ var content = $(".content");
 
 $("#mobile-nav-cross").on("click", function() {
     if (!content.hasClass("hidden")) {
-        if (!$(animatedElements[i]).hasClass("visible")) {
-            $(animatedElements[i]).updateViewportVisibility();
+        for (var i = 0; i < animatedElements.length; i++) {
+            if (!$(animatedElements[i]).hasClass("visible")) {
+                $(animatedElements[i]).updateViewportVisibility();
+            }
         }
     }
 });

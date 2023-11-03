@@ -1,4 +1,5 @@
 import { CreateFooter } from "./modules/footer.js";
+import { CreateMobileNavbar } from "./modules/mobileNavbar.js";
 import { CreateNavbar } from "./modules/navbar.js";
 
 var content = $(".content");
@@ -10,34 +11,29 @@ function IsOnMobile() {
 
 function OpenMobileNav() {
     $("#mobile-nav").addClass("active");
-    content.css({"height": "calc(100vh - 2.6rem)", "overflow-y" : "hidden"});
+    
+    let scrollTop = document.documentElement.scrollTop;
+    let scrollLeft = document.documentElement.scrollLeft;
 
-    $("#mobile-nav-cross").addClass("visible");
-    $("#mobile-nav-cross").removeClass("invisible");
-    $("#mobile-nav-logo").addClass("visible");
-    $("#mobile-nav-logo").removeClass("invisible");
-    $("#mobile-nav-divider").addClass("visible");
-    $("#mobile-nav-divider").removeClass("invisible");
+    window.onscroll = function() {
+        window.scrollTo(scrollLeft, scrollTop);
+    };
 }
 
 function CloseMobileNav() {
     $("#mobile-nav").removeClass("active");
-    content.css({"height": "", "overflow-y" : ""});
-
-    $("#mobile-nav-cross").removeClass("visible");
-    $("#mobile-nav-cross").addClass("invisible");
-    $("#mobile-nav-logo").removeClass("visible");
-    $("#mobile-nav-logo").addClass("invisible");
-    $("#mobile-nav-divider").removeClass("visible");
-    $("#mobile-nav-divider").addClass("invisible");
+    
+    window.onscroll = function() {};
 }
 
 CreateNavbar($("nav"));
-SetActiveNavLink();
+$("#nav-hamburger").click(OpenMobileNav);
 
-
-$("#mobile-nav").load("/templates/mobile-nav.html");
+CreateMobileNavbar($("#mobile-nav"));
+$("#mobile-nav-cross").click(CloseMobileNav);
 CreateFooter($("footer"));
+
+SetActiveNavLink();
 
 function SetActiveNavLink() {
     // Set active nav link
@@ -45,13 +41,17 @@ function SetActiveNavLink() {
         case "/":
         case "/index.html":
             $("#nav-home-link").addClass("active");
+            $("#mobile-nav-home-link").addClass("active");
+            console.log($("#mobile-nav-home-link").attr("class"));
             break;
         case "/projects.html":
             $("#nav-projects-link").addClass("active");
+            $("#mobile-nav-projects-link").addClass("active");
             break;
         case "/contact":
         case "/contact.html":
             $("#nav-contact-link").addClass("active");
+            $("#mobile-nav-contact-link").addClass("active");
             break;
     }
 
