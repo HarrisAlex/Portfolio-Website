@@ -33,8 +33,6 @@ CreateMobileNavbar($("#mobile-nav"));
 $("#mobile-nav-cross").click(CloseMobileNav);
 CreateFooter($("footer"));
 
-SetActiveNavLink();
-
 function SetActiveNavLink() {
     // Set active nav link
     switch (window.location.pathname) {
@@ -42,7 +40,6 @@ function SetActiveNavLink() {
         case "/index.html":
             $("#nav-home-link").addClass("active");
             $("#mobile-nav-home-link").addClass("active");
-            console.log($("#mobile-nav-home-link").attr("class"));
             break;
         case "/projects.html":
             $("#nav-projects-link").addClass("active");
@@ -84,7 +81,9 @@ $(document).ready(function () {
                 $("#mobile-nav-divider").removeClass("notransition");
             }
         }
-    } 
+    }
+
+    SetActiveNavLink();
 });
 
 // Open mobile nav if coming from another page on the site

@@ -301,8 +301,23 @@ section {
     margin-bottom: 2rem;
 }
 
+.video-wrapper {
+    overflow: hidden;
+}
+
+.video-wrapper video {
+    position: relative;
+    left: 1px;
+    bottom: 1px;
+}
+
+#name-animation {
+    height: 200px;
+}
+
 #introduction-hi {
     font-size: 6rem;
+    font-family: "Fair Prosper";
 }
 
 #introduction-description {
@@ -311,14 +326,31 @@ section {
 
 #section-introduction span {
     font-weight: bold;
+    transition: all 0.25s var(--s-curve);
+}
+
+#section-introduction span:hover {
+    filter: brightness(110%);
+}
+
+#section-introduction #name:hover {
+    text-shadow: 0 0 1rem var(--text);
 }
 
 #section-introduction #ucf {
     color: var(--ucf-accent);
 }
 
+#section-introduction #ucf:hover {
+    text-shadow: 0 0 1rem var(--ucf-accent);
+}
+
 #section-introduction #uiux {
     color: var(--accent);
+}
+
+#section-introduction #uiux:hover {
+    text-shadow: 0 0 1rem var(--accent);
 }
 
 #section-introduction img {
@@ -604,3 +636,9 @@ footer {
 }
 
 /* End of breakpoints */
+
+/* // font-face */
+@font-face {
+    font-family: "Fair Prosper";
+    src: url("../fonts/Fair\ Prosper.ttf");
+}

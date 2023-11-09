@@ -92,6 +92,5 @@ $(window).resize(function() {
 });
 
 $(document).ready(function() {
-    lastSlide = 2;
-    ChangeSlide(2);
+    ChangeSlide(1);
 });
