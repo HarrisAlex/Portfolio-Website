@@ -102,3 +102,10 @@ if (IsOnMobile()) {
         }
     }
 }
+
+// Add delay to name animation
+$("#name-animation").ready(function() {
+    setTimeout(function() { 
+        $("#name-animation").get(0).play();
+    }, 1000);
+});

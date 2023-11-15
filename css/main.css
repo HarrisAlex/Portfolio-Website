@@ -34,10 +34,6 @@ body {
 
     overflow-x: hidden;
 
-    padding: 1.3rem;
-    padding-left: 2.75rem;
-    padding-right: 2.75rem;
-
     color: var(--text);
 }
 
@@ -102,6 +98,10 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items:flex-start;
+
+    padding-top: 1.3rem;
+    padding-left: 2.75rem;
+    padding-right: 2.75rem;
 }
 
 #nav-logo {
@@ -270,22 +270,26 @@ nav {
 
     height: 3px;
 
-    margin: 2.5rem 0 2.5rem 0;
+    margin: 2.5rem 2.75rem 2.5rem 2.75rem;
 }
 
 .divider.invisible {
     opacity: 0;
 }
 
-main {
-    max-width: 1300px;
-    margin: auto;
+.divider.alternate {
+    background-color: var(--text);
 }
 
 section {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+
+    padding: 1.3rem;
+    padding-left: 2.75rem;
+    padding-right: 2.75rem;
 }
 
 #section-introduction {
@@ -360,28 +364,55 @@ section {
     margin-bottom: 0.5rem;
 }
 
-#slideshow {
-    width: 70%;
-    margin: 0 5% 0 5%;
-
-    height: 35rem;
+#section-projects {
+    padding-left: 0;
+    padding-right: 0;
 }
 
-#slideshow-wrapper {
-    display: flex;
+#project-tiles {
+    width: 100%;
 
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.project-tile {
+    display: grid;
+    grid-template-columns: 65% 35%;
+
+    height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.project-tile .text {
+    width: 100%;
     height: 100%;
 
-    overflow-x: visible;
+    background-color: var(--accent);
+    padding: 1.5rem;
 
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
 
-    transition: transform 1.5s var(--s-curve);
+    margin-right: auto;
+    margin-left: auto;
 }
 
-#slideshow-wrapper::-webkit-scrollbar {
-    height: 0;
+.project-tile .header {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.project-tile .description {
+    margin: 0.5rem;
+}
+
+.project-tile img {
+    width: 100%;
+    height: auto;
+
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .card {
@@ -426,43 +457,6 @@ section {
 .button:hover {
     background-color: var(--alternate-accent);
     color: var(--text);
-}
-
-#slideshow-button-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-
-    width: 100%;
-
-    padding-left: 15%;
-    padding-right: 15%;
-    padding-top: 3.25rem;
-    padding-bottom: 2.5rem;
-}
-
-.slideshow-button {
-    width: 20%;
-    height: 0.5rem;
-    background-color: var(--text);
-
-    border-radius: 0.5rem;
-
-    opacity: 35%;
-
-    cursor: pointer;
-
-    transition: background-color 0.25s var(--s-curve), opacity 0.25s var(--s-curve);
-}
-
-.slideshow-button:hover {
-    background-color: var(--accent);
-}
-
-.slideshow-button.active {
-    background-color: var(--accent);
-
-    opacity: 100%;
 }
 
 footer {
@@ -512,12 +506,6 @@ footer {
 
 /* ---Breakpoints--- */
 @media only screen and (min-width: 720px) {
-    main {
-        max-width: 1440px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
     footer {
         max-width: 1440px;
         margin-left: auto;
@@ -567,14 +555,6 @@ footer {
 
     #section-introduction img {
         width: 100%;
-    }
-
-    #slideshow {
-        width: 100%;
-        margin: 1.5rem;
-        margin-left: 0;
-        margin-right: 0;
-        height: 30rem;
     }
 
     .card {
