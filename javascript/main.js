@@ -37,10 +37,12 @@ function SetActiveNavLink() {
     // Set active nav link
     switch (window.location.pathname) {
         case "/":
+        case "/index":
         case "/index.html":
             $("#nav-home-link").addClass("active");
             $("#mobile-nav-home-link").addClass("active");
             break;
+        case "/projects":
         case "/projects.html":
             $("#nav-projects-link").addClass("active");
             $("#mobile-nav-projects-link").addClass("active");

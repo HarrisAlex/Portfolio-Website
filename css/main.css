@@ -281,6 +281,10 @@ nav {
     background-color: var(--text);
 }
 
+.divider.small {
+    margin: 1.25rem 1.375rem 1.25rem 1.375rem;
+}
+
 section {
     display: flex;
     flex-direction: column;
@@ -379,11 +383,32 @@ section {
 .project-tile {
     display: grid;
     grid-template-columns: 65% 35%;
+    order: 1;
 
     height: 100vh;
 
     justify-content: center;
     align-items: center;
+
+    height: fit-content;
+}
+
+.project-tile img::after {
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    box-shadow: inset 0 0 gold;
+}
+
+.project-tile.reverse {
+    grid-template-columns: 35% 65%;
+}
+
+.project-tile.reverse img {
+    order: 1;
 }
 
 .project-tile .text {
@@ -391,20 +416,24 @@ section {
     height: 100%;
 
     background-color: var(--accent);
-    padding: 1.5rem;
+    padding: 2rem;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     margin-right: auto;
     margin-left: auto;
 }
 
+.project-tile .text .button {
+    margin-top: 3rem;
+    align-self: center;
+}
+
 .project-tile .header {
     text-align: center;
     font-size: 2rem;
-}
-
-.project-tile .description {
-    margin: 0.5rem;
 }
 
 .project-tile img {
@@ -450,8 +479,17 @@ section {
     transition: background-color 0.25s var(--s-curve);
 }
 
+.button.alternate {
+    background-color: var(--text);
+    color: var(--background);   
+}
+
 .button:visited, .button:link {
     color: var(--text);
+}
+
+.button.alternate:visited, .button.alternate:link {
+    color: var(--background);
 }
 
 .button:hover {
@@ -466,6 +504,8 @@ footer {
     justify-content: space-around;
     align-items: center;
     row-gap: 1rem;
+
+    margin-bottom: 2rem;
 }
 
 #icon-linkedin {
@@ -600,6 +640,22 @@ footer {
         flex-direction: column;
 
         font-size: 1rem;
+    }
+
+    .project-tile {
+        grid-template-columns: 100%;
+    }
+
+    .project-tile .text {
+        padding: 5rem 3rem 5rem 3rem;
+    }
+
+    .project-tile.reverse {
+        grid-template-columns: 100%;
+    }
+
+    .project-tile.reverse img {
+        order: 0;
     }
 
     #icon-linkedin * {
