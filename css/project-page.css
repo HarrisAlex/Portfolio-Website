@@ -26,11 +26,16 @@ article {
     gap: 3rem;
 }
 
+article .text-section {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.5em;
+}
+
 article p {
-    font-family: Georgia, 'Times New Roman', Garamond, serif;
-    letter-spacing: 0.02rem;
-    line-height: 140%;
-    word-spacing: 0.1rem;
+    line-height: 200%;
+    font-size: 1.3rem;
 
     text-align: left;
 }

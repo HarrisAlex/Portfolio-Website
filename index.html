@@ -11,13 +11,6 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/aos.css">
         <script src="javascript/jquery-3.6.3.min.js"></script>
-        <script type="importmap">
-            {
-                "imports": {
-                    "three": "https://unpkg.com/three/build/three.module.js"
-                }
-            }
-        </script>
         <title>Home - Alex Harris</title>
     </head>
     <body>
@@ -28,12 +21,14 @@
             <div class="divider" aos="horizontal-grow slow"></div>
             <main>
                 <section id="section-introduction">
-                    <div class="video-wrapper" aos="fade slow">
+                    <p id="introduction-description" aos="slow slide-down">I'm</p>
+                    <div class="video-wrapper">
                         <video id="name-animation" preload muted>
-                            <source src="./videos/Name Animation.mp4" type="video/mp4">
+                            <source src="./videos/Name Animation.webm" type="video/mp4">
+                            Alex Harris
                         </video>
                     </div>
-                    <p id="introduction-description" aos="grow fade slow">i'm <span id="name">alex harris</span>, a student at the <span id="ucf">university of central florida</span> studying digital media with a focus on web design and <span id="uiux">ui / ux design</span>.</p>    
+                    <p aos="slow slide-up" id="introduction-description">Studying Computer Science at the <span id="ucf">University of Central Florida</span></p>    
                     <img src="images/Portrait.webp" width="2048" height="1356" aos="far slide-up fade slow" alt="Portrait of Alex Harris">
                 </section>
                 <div class="divider" aos="horizontal-grow slow"></div>
@@ -75,6 +70,5 @@
         </div>
         <script type="module" src="javascript/main.js"></script>
         <script defer src="javascript/aos.js"></script>
-        <!-- <script type="module" src="javascript/3d.js"></script> -->
     </body>
 </html>

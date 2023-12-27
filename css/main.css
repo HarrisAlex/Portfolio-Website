@@ -302,11 +302,9 @@ section {
     justify-content: center;
     align-items: center;
 
-    text-align: center;
-}
+    gap: 1rem;
 
-#section-introduction > * {
-    margin-bottom: 2rem;
+    text-align: center;
 }
 
 .video-wrapper {
@@ -391,16 +389,6 @@ section {
     align-items: center;
 
     height: fit-content;
-}
-
-.project-tile img::after {
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    box-shadow: inset 0 0 gold;
 }
 
 .project-tile.reverse {

@@ -1,3 +1,5 @@
+const aosDistance = 0.35;
+
 $.fn.updateViewportVisibility = function() {
     if ($(this).hasClass("visible")) {
         return;
@@ -20,11 +22,11 @@ $.fn.updateViewportVisibility = function() {
     var viewportBottom = viewportTop + $(window).height();
 
     if (viewportTop > 60) {
-        viewportTop += $(window).outerHeight() * 0.1;
+        viewportTop += $(window).outerHeight() * aosDistance;
     }
 
     if (Math.abs(viewportBottom - $(document).height()) > 60) {
-        viewportBottom -= $(window).outerHeight() * 0.1;
+        viewportBottom -= $(window).outerHeight() * aosDistance;
     }
 
     if (elementBottom > viewportTop && elementTop < viewportBottom) {
@@ -59,6 +61,14 @@ $("#nav-hamburger").click(function() {
 });
 
 $(document).ready(function() {
+    animatedElements = $("[aos]");
+
+    for (var i = 0; i < animatedElements.length; i++) {
+        $(animatedElements[i]).updateViewportVisibility();
+    }
+});
+
+$(window).on("load", function() {
     animatedElements = $("[aos]");
 
     for (var i = 0; i < animatedElements.length; i++) {
