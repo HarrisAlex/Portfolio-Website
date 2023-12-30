@@ -20,46 +20,54 @@
             <nav aos="fade slow"></nav>
             <div class="divider" aos="horizontal-grow slow"></div>
             <main>
-                <section id="section-introduction">
+                <section id="introduction">
                     <p id="introduction-description" aos="slow slide-down">I'm</p>
                     <div class="video-wrapper">
-                        <video id="name-animation" preload muted>
-                            <source src="./videos/Name Animation.webm" type="video/mp4">
-                            Alex Harris
+                        <video id="name-animation" poster="images/nameAnimationBackup.png" preload muted>
+                            <source src="./videos/Name Animation.webm" type="video/webm">
                         </video>
                     </div>
-                    <p aos="slow slide-up" id="introduction-description">Studying Computer Science at the <span id="ucf">University of Central Florida</span></p>    
+                    <p aos="slow slide-up">Studying Computer Science at the <span id="ucf">University of Central Florida</span></p>    
                     <img src="images/Portrait.webp" width="2048" height="1356" aos="far slide-up fade slow" alt="Portrait of Alex Harris">
                 </section>
                 <div class="divider" aos="horizontal-grow slow"></div>
-                <section id="section-projects">
+                <section id="projects">
                     <h2 aos="far slide-down fade slow">Projects</h2>
                     <div id="project-tiles">
                         <div class="project-tile">                           
-                            <img src="./images/projects/city-alley-preview.jpg" aos="slide-right far slow">
+                            <img src="./images/projects/story-forge-preview.jpg" aos="slide-right far slow" class="small project-thumbnail">
                             <div class="text" aos="slide-left far slow">
-                                <p class="header">City Alley</p>
+                                <p class="header">Story Forge</p>
                                 <div class="divider small alternate" aos="horizontal-grow slow"></div>
-                                <p class="description">I created this 3D rendering of an alley using Blender. My goal for this project was achieving photorealism using a combination of lighting and texturing.</p>
-                                <a href="/projects/city-alley.html" class="button alternate">Learn more</a>
+                                <p class="description">I worked with a team to create an AI-powered web application that produces unique interactive stories for users using ChatGPT-4.</p>
+                                <div class="learn-more button alternate" projectID="storyforge">Learn more</div>
                             </div>
                         </div>
                         <div class="project-tile reverse">                           
-                            <img src="./images/projects/creepy-hotel-hallway-preview.jpg" aos="slide-left far slow">
+                            <img src="./images/projects/creepy-hotel-hallway-preview.jpg" aos="slide-left far slow" class="project-thumbnail">
                             <div class="text" aos="slide-right far slow">
-                                <p class="header">Creepy Hallway</p>
+                                <p class="header">Procedural Dungeon Generator</p>
                                 <div class="divider small alternate" aos="horizontal-grow slow"></div>
-                                <p class="description">I created this simple 3D rendering a creepy hotel hallway using Blender as a fun, small project to practice my skills.</p>
-                                <a href="/projects/creepy-hallway.html" class="button alternate">Learn more</a>
+                                <p class="description">I designed and created a multiplatform desktop application that procedurally generates 3D dungeons using Unity3D and C#.</p>
+                                <div class="learn-more button alternate" projectID="dungeonGenerator">Learn more</div>
                             </div>
                         </div>
                         <div class="project-tile">                           
-                            <img src="./images/projects/coffee-shop-website-preview.webp" aos="slide-right far slow">
+                            <img src="./images/projects/dequeue-preview.jpg" aos="slide-right far slow" class="small project-thumbnail">
                             <div class="text" aos="slide-left far slow">
-                                <p class="header">Coffee Shop Website</p>
+                                <p class="header">Remote Shortcut Manager</p>
                                 <div class="divider small alternate" aos="horizontal-grow slow"></div>
-                                <p class="description">I created this mock-up for a coffee shop website using HTML and CSS. I wanted to practice my skills with Flexbox and responsive design.</p>
-                                <a href="/projects/coffee-shop-website.html" class="button alternate">Learn more</a>
+                                <p class="description">I worked on a team to create an iOS application and corresponding desktop application to allow users to remotely run actions on their computer from their phone.</p>
+                                <div class="learn-more button alternate" projectID="shortcutManager">Learn more</div>
+                            </div>
+                        </div>
+                        <div class="project-tile reverse">                           
+                            <img src="./images/projects/creepy-hotel-hallway-preview.jpg" aos="slide-left far slow" class="project-thumbnail">
+                            <div class="text" aos="slide-right far slow">
+                                <p class="header">DirectX 3D Renderer</p>
+                                <div class="divider small alternate" aos="horizontal-grow slow"></div>
+                                <p class="description">I created a 3D rendering application in C++ that allows users to display 3D data in real time using the DirectX and Direct3D 11 APIs.</p>
+                                <div class="learn-more button alternate" projectID="renderer">Learn more</div>
                             </div>
                         </div>
                     </div>
@@ -67,6 +75,20 @@
             </main>
             <div class="divider" aos="horizontal-grow slow"></div>
             <footer aos="fade slow"></footer>
+        </div>
+        <div id="project-modal">
+            <div id="modal-content">
+                <div id="modal-content-wrapper">
+                    <p id="modal-title"></p>
+                    <p id="modal-description"></p>
+                    <div id="modal-images"></div>
+                </div>
+            </div>
+            <div id="close-modal"></div>
+        </div>
+        <div id="image-zoom">
+            <img />
+            <div id="close-image-zoom"></div>
         </div>
         <script type="module" src="javascript/main.js"></script>
         <script defer src="javascript/aos.js"></script>

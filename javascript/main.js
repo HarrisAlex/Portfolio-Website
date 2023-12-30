@@ -1,6 +1,7 @@
 import { CreateFooter } from "./modules/footer.js";
 import { CreateMobileNavbar } from "./modules/mobileNavbar.js";
 import { CreateNavbar } from "./modules/navbar.js";
+import { storyForge, dungeonGenerator, shortcutManager, renderer } from "./projects-data.js";
 
 var content = $(".content");
 
@@ -105,9 +106,103 @@ if (IsOnMobile()) {
     }
 }
 
+$("#name-animation").attr("style", "opacity: 0;");
+
 // Add delay to name animation
 $("#name-animation").ready(function() {
     setTimeout(function() { 
+        $("#name-animation").attr("style", "opacity: 1;");
         $("#name-animation").get(0).play();
     }, 1000);
 });
+
+$(".project-thumbnail").click(function() {
+    openImageZoom($(this).attr("src"));
+});
+
+$("#close-image-zoom").click(function() {
+    closeImageZoom();
+});
+
+$(".learn-more").click(function() {
+   openProjectModal(projects[$(this).attr("projectID")]);
+});
+
+const projects = {
+    "storyforge": storyForge,
+    "dungeonGenerator": dungeonGenerator,
+    "shortcutManager": shortcutManager,
+    "renderer": renderer
+};
+
+function openProjectModal(project) {
+    $("#modal-title").html(project.title);
+    $("#modal-description").html(project.description);
+    $("#modal-images").empty();
+    $("#project-modal").addClass("active");
+
+    let count = project.thumbnails.length;
+
+    if (count > 0) {
+        project.thumbnails.map(function(thumbnail) {
+            let image = $("<div class='image-container'><img src='" + thumbnail + "' class='project-thumbnail'></div>");
+
+            image.click(function() {
+                openImageZoom($(this).children("img").attr("src"));
+            });
+            
+            image.children("img").on("load", function() {
+                count--;
+
+                if (count == 0) {
+                    centerModal();
+                }
+            });
+
+            $("#modal-images").append(image);
+        });
+    } else {
+        centerModal();
+    }
+
+    lockScroll($("body").get(0));
+}
+
+$("#close-modal").click(function() {
+    closeProjectModal();
+});
+
+function closeProjectModal() {
+    $("#project-modal").removeClass("active");
+
+    unlockScroll($("body").get(0));
+}
+
+function openImageZoom(image) {
+    $("#image-zoom").addClass("active");
+    $("#image-zoom").children("img").attr("src", image);
+
+    lockScroll($("body").get(0));
+}
+
+function closeImageZoom() {
+    $("#image-zoom").removeClass("active");
+
+    unlockScroll($("body").get(0));
+}
+
+function lockScroll(target) {
+    $(target).attr("style", "overflow-y: hidden; padding-right: 7px");
+}
+
+function unlockScroll(target) {
+    $(target).attr("style", "");
+}
+
+$(window).resize(function() {
+    centerModal();
+});
+
+function centerModal() {
+    $("#modal-content").attr("style", "top: " + ((window.innerHeight / 2) - ($("#modal-content").outerHeight() / 2)) + "px;");
+}

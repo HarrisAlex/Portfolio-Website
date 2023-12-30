@@ -1,19 +1,3 @@
-export class Project {
-    constructor(title, subtitle, description, url, thumbnail) {
-        this.title = title;
-        this.subtitle = subtitle;
-        this.description = description;
-        this.url = url;
-        this.thumbnail = thumbnail;
-    }
-
-    title = "Project Title";
-    subtitle = "Project Subtitle";
-    description = "Project description";
-    url = "projects.html";
-    thumbnail = "images/Portrait.webp";
-}
-
 export function CreateProjectCard(project, parent) {
     var card = document.createElement("div");
     $(card).addClass("card");
