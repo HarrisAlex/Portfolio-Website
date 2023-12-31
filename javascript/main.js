@@ -296,13 +296,31 @@ $("#contact-form").submit(function(event) {
         processData: false,
         contentType: false,
         success: function(response) {
-            $("#contact-subtitle").addClass("hidden");
-            $("#contact-form").addClass("hidden");
-            $("#contact-success").removeClass("hidden");
+            if (response.getCharAt(0) == "0") {
+                contactFormSuccess();
+            } else {
+                contactFormFailure("Your message could not be sent due to invalid characters. Please try again.");
+            }
             
-            console.log(response);
+        },
+        error: function(response) {
+            contactFormFailure("The server was unable to process your request. Please try again later.");
         }
     });
 });
+
+function contactFormSuccess() {
+    $("#contact-subtitle").addClass("hidden");
+    $("#contact-form").addClass("hidden");
+    $("#contact-success").removeClass("hidden");
+}
+
+function contactFormFailure(failureText) {
+    $("#contact-subtitle").addClass("hidden");
+    $("#contact-form").addClass("hidden");
+
+    $("#contact-failure").text(failureText);
+    $("#contact-failure").removeClass("hidden");
+}
 
 setActiveWaypoint();

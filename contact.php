@@ -1,4 +1,10 @@
 <?php
+/*
+    Response Codes:
+    0 - Success
+    1 - Error
+*/
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // collect value of input fields
     $name = $_POST['name'];
@@ -6,16 +12,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject = $_POST['subject'];
     $message = $_POST['message'];
 
+    sanitize_input($name);
+    sanitize_input($email);
+    sanitize_input($subject);
+    sanitize_input($message);
+
     // Validate input
     if (empty($name) || empty($email) || empty($subject) || empty($message)) {
-        echo "Failure";
+        echo "1";
     } else {
         // Send email (or handle the data in the way you prefer)
-        sanitize_input($name);
-        sanitize_input($email);
-        sanitize_input($subject);
-        sanitize_input($message);
-
         $messageToSend = "
             <html>
                 <head>
@@ -39,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         mail(getenv('EMAIL'), "Personal Website Contact Form", $messageToSend, implode("\r\n", $headers));
 
-        echo "Success";
+        echo "0";
     }
 }
 
