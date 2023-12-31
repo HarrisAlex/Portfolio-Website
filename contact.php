@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validate input
     if (empty($name) || empty($email) || empty($subject) || empty($message)) {
-        echo "Name, email, and message are required!";
+        echo "Failure";
     } else {
         // Send email (or handle the data in the way you prefer)
         sanitize_input($name);
@@ -38,6 +38,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $headers[] = 'From: Personal Website <alexharris.design>';
         
         mail(getenv('EMAIL'), "Personal Website Contact Form", $messageToSend, implode("\r\n", $headers));
+
+        echo "Success";
     }
 }
 
