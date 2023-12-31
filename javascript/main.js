@@ -283,4 +283,26 @@ function setActiveWaypoint() {
     });
 }
 
+$("#contact-form").submit(function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    let formData = new FormData($("#contact-form")[0]);
+
+    $.ajax({
+        type: "POST",
+        url: $("#contact-form").attr("action"),
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(response) {
+            $("#contact-subtitle").addClass("hidden");
+            $("#contact-form").addClass("hidden");
+            $("#contact-success").removeClass("hidden");
+            
+            console.log(response);
+        }
+    });
+});
+
 setActiveWaypoint();

@@ -678,6 +678,10 @@ section#introduction {
 
 }
 
+#contact-subtitle.hidden {
+    display: none;
+}
+
 #contact-form {
     display: flex;
     flex-direction: column;
@@ -776,6 +780,14 @@ section#introduction {
 label {
     text-align: left;
     margin-left: 0.5rem;
+}
+
+#contact-form.hidden {
+    display: none;
+}
+
+p.hidden {
+    display: none;
 }
 
 footer {
