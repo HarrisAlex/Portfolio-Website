@@ -1,4 +1,4 @@
-const aosDistance = 0.35;
+const aosDistance = 0.25;
 
 $.fn.updateViewportVisibility = function() {
     if ($(this).hasClass("visible")) {
