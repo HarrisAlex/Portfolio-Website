@@ -188,7 +188,11 @@ $(window).resize(function() {
 });
 
 function centerModal() {
-    $("#modal-content").attr("style", "top: " + (($(window).outerHeight() / 2) - (($("#modal-content").outerHeight() - 68)/ 2)) + "px;");
+    if (window.mobileCheck()) {
+        $("#modal-content").attr("style", "top: " + ((window.innerHeight / 2) - (($("#modal-content").outerHeight() - 68)/ 2)) + "px;");
+    } else {
+        $("#modal-content").attr("style", "top: " + (($(window).outerHeight() / 2) - (($("#modal-content").outerHeight() - 68)/ 2)) + "px;");
+    }
 }
 
 let lastMouseY;

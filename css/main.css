@@ -31,7 +31,6 @@
 
 html {
     line-height: 1.15;
-    height: -webkit-fill-available;
 }
 
 ::-webkit-scrollbar-track {
@@ -60,9 +59,6 @@ body {
     overflow-x: hidden;
 
     padding-top: 4.25rem;
-
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
 
     color: var(--text);
 }
