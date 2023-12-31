@@ -190,6 +190,7 @@ $(window).resize(function() {
 function centerModal() {
     if (window.mobileCheck()) {
         $("#modal-content").attr("style", "top: " + ((window.innerHeight / 2) - (($("#modal-content").outerHeight() - 68)/ 2)) + "px;");
+        $("#modal-content").css("max-height", (window.innerHeight - 68) + "px");
     } else {
         $("#modal-content").attr("style", "top: " + (($(window).outerHeight() / 2) - (($("#modal-content").outerHeight() - 68)/ 2)) + "px;");
     }
