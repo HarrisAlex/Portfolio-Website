@@ -296,7 +296,7 @@ $("#contact-form").submit(function(event) {
         processData: false,
         contentType: false,
         success: function(response) {
-            if (response.getCharAt(0) == "0") {
+            if (response.charAt(0) == "0") {
                 contactFormSuccess();
             } else {
                 contactFormFailure("Your message could not be sent due to invalid characters. Please try again.");
