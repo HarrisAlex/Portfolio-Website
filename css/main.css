@@ -481,6 +481,7 @@ section#introduction {
     border-radius: 32px;
 
     backdrop-filter: brightness(50%) blur(32px);
+    -webkit-backdrop-filter: brightness(50%) blur(32px);
 
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -841,9 +842,11 @@ footer {
 @keyframes modalFadeIn {
     from {
         backdrop-filter: brightness(100%);
+        -webkit-backdrop-filter: brightness(100%);
     }
     to {
         backdrop-filter: brightness(65%);
+        -webkit-backdrop-filter: brightness(65%);
     }
 }
 
@@ -872,10 +875,12 @@ footer {
 @keyframes animateFocus {
     from {
         backdrop-filter: brightness(100%) blur(0px);
+        -webkit-backdrop-filter: brightness(100%) blur(0px);
         opacity: 0%;
     }
     to {
         backdrop-filter: brightness(25%) blur(8px);
+        -webkit-backdrop-filter: brightness(25%) blur(8px);
         opacity: 100%;
     }
 }
