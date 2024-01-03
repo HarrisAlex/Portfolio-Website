@@ -7,10 +7,12 @@
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // collect value of input fields
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $subject = $_POST['subject'];
-    $message = $_POST['message'];
+    $name = filter_input(INPUT_POST, 'name');
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+    $subject = filter_input(INPUT_POST, 'subject');
+    $message = filter_input(INPUT_POST, 'message');
+
+    $email = filter_var($email, FILTER_VALIDATE_EMAIL);
 
     sanitize_input($name);
     sanitize_input($email);
@@ -37,7 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </body>
             </html>
         ";
-        
         
         $headers[] = 'MIME-Version: 1.0';
         $headers[] = 'Content-type: text/html; charset=iso-8859-1';

@@ -115,12 +115,6 @@ nav {
     height: 4.25rem;
 
     z-index: 2;
-
-    transition: all 1s var(--s-curve);
-}
-
-nav.hidden {
-    transform: translateY(-3.5rem);
 }
 
 #nav-logo {
@@ -787,6 +781,12 @@ label {
     display: none;
 }
 
+.contact-message {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
 p.hidden {
     display: none;
 }
@@ -891,6 +891,15 @@ footer {
     }
     to {
         transform: scaleX(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100%;
     }
 }
 

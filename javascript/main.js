@@ -206,7 +206,6 @@ let lastMouseY;
 
 $(window).mousemove(function (e) { 
     lastMouseY = e.clientY;
-    updateNavVisibility(lastMouseY, $(window).scrollTop());
 });
 
 let waypoints = {};
@@ -239,26 +238,7 @@ $.each(navlinks, function (indexInArray, valueOfElement) {
     });
 });
 
-function updateNavVisibility(mouseY, scrollTop) {
-    if (window.smallScreen() || window.mobileAndTabletCheck()) {
-        $("nav").removeClass("hidden");
-        return;
-    }
-
-    let maxY = 12;
-    if (!$("nav").hasClass("hidden")) {
-        maxY = 68;
-    }
-
-    if (mouseY > maxY && scrollTop > 120) {
-        $("nav").addClass("hidden");
-    } else {
-        $("nav").removeClass("hidden");
-    }
-}
-
 $(window).scroll(function() {
-    updateNavVisibility(lastMouseY, $(window).scrollTop());
     setActiveWaypoint();
 });
 
