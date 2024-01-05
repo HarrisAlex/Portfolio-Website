@@ -202,12 +202,6 @@ function centerModal() {
     }
 }
 
-let lastMouseY;
-
-$(window).mousemove(function (e) { 
-    lastMouseY = e.clientY;
-});
-
 let waypoints = {};
 $.each($("[waypoint]"), function (indexInArray, valueOfElement) {
     waypoints[$(this).attr("waypoint")] = $(this);
