@@ -3,7 +3,7 @@
     --background: #171717;
     --lighter-background: #313131;
     --ucf-accent: #FFC904;
-    --text: #ECECEC;
+    --text: #EFEFEF;
     --accent: #D42121;
     --accent-highlight: #ee4545;
     --alternate-accent: #d48921;
@@ -13,6 +13,8 @@
     --frosted-background-opaque: rgb(179, 53, 53);
     --frosted-outline: rgba(233, 83, 83, 0.3);
     --frosted-shadow: rgba(34, 17, 17, 0.333);
+
+    --nav-height: 4.25rem;
 
     --gradient: linear-gradient(135deg, rgba(212,33,33,1) 0%, rgba(212,137,33,1) 100%);
 
@@ -58,7 +60,7 @@ body {
 
     overflow-x: hidden;
 
-    padding-top: 4.25rem;
+    padding-top: var(--nav-height);
 
     color: var(--text);
 }
@@ -68,22 +70,9 @@ body {
     background-color: var(--accent);
 }
 
-a {
-    text-decoration: none;
-    color: var(--ucf-accent);
-
-    transition: all 0.25s var(--s-curve);
-}
-
-a:hover {
-    color: var(--alternate-accent);
-}
-
 h2 {
     font-size: 2.7rem;
     font-weight: 600;
-    margin: 0;
-    margin-bottom: 1rem;
 }
 
 p {
@@ -112,7 +101,7 @@ nav {
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
 
-    height: 4.25rem;
+    height: var(--nav-height);
 
     z-index: 2;
 }
@@ -129,7 +118,6 @@ nav {
     stroke-linecap: round;
     stroke-width: 3rem;
     
-    min-height: var(--mobile-icon-height);
     height: var(--mobile-icon-height);
 
     cursor: pointer;
@@ -197,8 +185,6 @@ nav {
 
     background-color: var(--background);
 
-    box-sizing: border-box;
-
     width: 100vw;
     height: 100vh;
 
@@ -211,6 +197,7 @@ nav {
 
     flex-direction: column;
     justify-content: center;
+    gap: 1rem;
 
     transition: left 1s var(--s-curve);
 }
@@ -232,7 +219,6 @@ nav {
 
     stroke: var(--text);
 
-    min-height: var(--mobile-icon-height);
     height: var(--mobile-icon-height);
 
     top: 2.2rem;
@@ -258,15 +244,13 @@ nav {
 
     min-height: 4.25rem;
     max-height: 6rem;
-
-    margin-bottom: 1.75rem;
 }
 
 #mobile-nav-link-list {
     display: flex;
     flex-direction: column;
 
-    margin-top: 3.3rem;
+    gap: 1.5rem;
 }
 
 .mobile-nav-link {
@@ -274,7 +258,7 @@ nav {
     font-weight: lighter;
     color: var(--text);
 
-    margin-bottom: 1.3rem;
+    transition: all 0.25s var(--s-curve);
 }
 
 .mobile-nav-link.active {
@@ -282,7 +266,7 @@ nav {
 }
 
 .mobile-nav-link:hover {
-    color: var(--accent);
+    color: var(--alternate-accent);
 
     cursor: pointer;
 }
@@ -292,7 +276,10 @@ nav {
 
     height: 3px;
 
-    margin: 2.5rem 2.75rem 2.5rem 2.75rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    margin-left: 2.75rem;
+    margin-right: 2.75rem;
 }
 
 .divider.invisible {
@@ -304,16 +291,15 @@ nav {
 }
 
 .divider.small {
-    margin: 1.25rem 1.375rem 1.25rem 1.375rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    margin-right: 1.375rem;
+    margin-left: 1.375rem;
 }
 
 section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
 
-
-    padding: 1.3rem;
     padding-left: 2.75rem;
     padding-right: 2.75rem;
 }
@@ -321,12 +307,11 @@ section {
 section#introduction {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 
     gap: 1rem;
 
-    text-align: center;
+    padding-top: 1.3rem;
 }
 
 .video-wrapper {
@@ -367,30 +352,17 @@ section#introduction {
     max-width: 100%;
     width: 41rem;
     height: auto;
-
-    margin-bottom: 0.5rem;
 }
 
-#projects {
-    overflow-x: hidden;
+section#projects {
     padding-left: 0;
     padding-right: 0;
-}
-
-#project-tiles {
-    width: 100%;
-
-    padding-top: 1rem;
-    padding-bottom: 1rem;
 }
 
 .project-tile {
     display: grid;
     grid-template-columns: 65% 35%;
 
-    height: 100vh;
-
-    justify-content: center;
     align-items: center;
 
     height: fit-content;
@@ -405,7 +377,6 @@ section#introduction {
 }
 
 .project-tile .text {
-    width: 100%;
     height: 100%;
 
     background-color: var(--accent);
@@ -414,9 +385,6 @@ section#introduction {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    margin-right: auto;
-    margin-left: auto;
 }
 
 .project-tile .text .button {
@@ -425,7 +393,6 @@ section#introduction {
 }
 
 .project-tile .header {
-    text-align: center;
     font-size: 2rem;
 }
 
@@ -442,29 +409,37 @@ section#introduction {
     height: auto;
 }
 
-#project-modal {
-    display: none;
+#close-modal {
     position: fixed;
 
-    left: 0;
     top: 0;
+    left: 0;
 
     width: 100vw;
     height: 100vh;
 }
 
-#project-modal.active {
-    display: block;
+#project-modal {
+    display: none;
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    padding-top: var(--nav-height);
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
 }
 
 #modal-content {
-    position: absolute;
+    backdrop-filter: brightness(50%) blur(32px);
+    -webkit-backdrop-filter: brightness(50%) blur(32px);
 
     overflow: hidden;
-
-    display: flex;
-
-    left: 15vw;
 
     width: 70vw;
     height: fit-content;
@@ -472,19 +447,19 @@ section#introduction {
 
     z-index: 1;
 
-    border-radius: 32px;
-
-    backdrop-filter: brightness(50%) blur(32px);
-    -webkit-backdrop-filter: brightness(50%) blur(32px);
+    border-radius: 16px;
 
     -ms-overflow-style: none;
     scrollbar-width: none;
 
-    color: var(--text);
-
     background-color: var(--frosted-background);
     border: 1px solid var(--frosted-outline);
     box-shadow: 0px 8px 16px 0px var(--frosted-shadow);
+}
+
+
+#project-modal.active {
+    display: flex;
 }
 
 #modal-content-wrapper {
@@ -542,13 +517,6 @@ section#introduction {
 
 #modal-title {
     font-size: 3rem;
-}
-
-#close-modal {
-    position: absolute;
-
-    width: 100%;
-    height: 100%;
 }
 
 #project-modal.active #close-modal {
@@ -614,23 +582,6 @@ section#introduction {
     cursor: pointer;
 }
 
-.card {
-    height: auto;
-    flex-shrink: 0;
-
-    scroll-snap-align: start;
-
-    position: relative;
-    overflow: hidden;
-
-    margin-left: 5rem;
-    margin-right: 5rem;
-}
-
-.card-content {
-    box-sizing: border-box;
-}
-
 .button {
     background-color: var(--accent);
     color: var(--text);
@@ -644,33 +595,16 @@ section#introduction {
 
     cursor: pointer;
 
-    width: fit-content;
-
     transition: background-color 0.25s var(--s-curve);
 }
 
 .button.alternate {
     background-color: var(--text);
-    color: var(--background);   
-}
-
-.button:visited, .button:link {
-    color: var(--text);
-}
-
-.button.alternate:visited, .button.alternate:link {
     color: var(--background);
 }
 
 .button:hover {
     background-color: var(--alternate-accent);
-}
-
-#contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
 }
 
 #contact-subtitle.hidden {
@@ -695,7 +629,6 @@ section#introduction {
     max-width: 900px;
 
     justify-content: center;
-    align-items: center;
 }
 
 .contact-form-field {
@@ -714,8 +647,6 @@ section#introduction {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-
-    height: 100%;
 }
 
 #contact-form-message textarea {
@@ -745,14 +676,9 @@ section#introduction {
     transition: color 0.25s var(--s-curve);
 }
 
-#contact-form input:hover, #contact-form textarea:hover {
+#contact-form-submit input:hover {
     box-shadow: 0 0 16px 0 var(--accent);
     outline: 2px solid var(--accent-highlight);
-}
-
-#contact-form input:hover + label, #contact-form textarea:hover + label {
-    color: var(--accent-highlight);
-    text-shadow: 0 0 8px var(--accent);
 }
 
 #contact-form input:focus, #contact-form textarea:focus {
@@ -765,7 +691,7 @@ section#introduction {
     text-shadow: 0 0 8px var(--alternate-accent);
 }
 
-#contact-form input[type="submit"] {
+#contact-form-submit input {
     width: 8rem;
     text-align: center;
 
@@ -774,7 +700,6 @@ section#introduction {
 
 label {
     text-align: left;
-    margin-left: 0.5rem;
 }
 
 #contact-form.hidden {
@@ -792,8 +717,6 @@ p.hidden {
 }
 
 footer {
-    position: relative;
-
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -802,12 +725,12 @@ footer {
     padding-bottom: 2rem;
 }
 
-#icon-linkedin {
-    margin-right: 1.5rem;
+#footer-links {
+    display: flex;
+    gap: 1.5rem;
 }
 
 #icon-linkedin * {
-    min-height: 21px;
     height: 3rem;
 
     width: auto;
@@ -820,7 +743,6 @@ footer {
 }
 
 #icon-github * {
-    min-height: 21px;
     height: 3rem;
 
     transition: filter 0.25s var(--s-curve);
@@ -912,7 +834,6 @@ footer {
         margin-right: auto;
     }
 }
-
 
 /* Mobile */
 @media only screen and (max-width: 720px) {
