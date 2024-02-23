@@ -78,16 +78,6 @@ if (window.smallScreen()) {
     }
 }
 
-$("#name-animation").css("opacity", "0");
-
-// Add delay to name animation
-$("#name-animation").ready(function() {
-    setTimeout(function() { 
-        $("#name-animation").css("opacity", "1");
-        $("#name-animation").get(0).play();
-    }, 1000);
-});
-
 $(".project-thumbnail").click(function() {
     openImageZoom($(this).attr("src"));
 });
@@ -199,13 +189,17 @@ $.each($("a"), function (indexInArray, valueOfElement) {
 $.each(navlinks, function (indexInArray, valueOfElement) {
     $(this).click(function() {
         let offset = 0;
+        let scroll = $(waypoints[$(this).attr("destination")]).offset().top;
 
         if ($(this).attr("destination") == "projects" || $(this).attr("destination") == "contact") {
             offset = 50;
+        } else if ($(this).attr("destination") == "home") {
+            offset = scroll;
         }
 
+
         $("html, body").animate({
-            scrollTop: $(waypoints[$(this).attr("destination")]).offset().top - offset
+            scrollTop: scroll - offset
         }, 1000);
 
         if (window.smallScreen()) {
@@ -233,10 +227,16 @@ function setActiveWaypoint() {
     let closestDistance = 1000000;
 
     $.each(waypoints, function (indexInArray, valueOfElement) {
-        let distance = Math.abs($(this).offset().top - ($(window).scrollTop() + ($(window).height() / 2)));
+        let distanceTop = Math.abs($(this).offset().top - $(window).scrollTop());
+        let distanceBottom = Math.abs(($(this).offset().top + $(this).height()) - ($(window).scrollTop() + $(window).height()));
 
-        if (distance < closestDistance) {
-            closestDistance = distance;
+        if (distanceTop < closestDistance) {
+            closestDistance = distanceTop;
+            closestWaypoint = $(this).attr("waypoint");
+        }
+
+        if (distanceBottom < closestDistance) {
+            closestDistance = distanceBottom;
             closestWaypoint = $(this).attr("waypoint");
         }
     });
