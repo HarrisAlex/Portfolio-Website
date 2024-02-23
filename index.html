@@ -17,7 +17,7 @@
     <body>
         <div id="mobile-nav">
             <svg id="mobile-nav-logo" id="Layer_3" data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000.15 567.46"><polygon points=".43 567.46 218.23 0 289.91 0 507.7 567.46 430.88 567.46 253.62 70.13 74.68 567.46 .43 567.46"/><polygon points="867.15 0 867.15 253.73 575.15 253.73 575.15 0 508.42 0 508.15 567.46 575.15 567.46 575.15 313.73 867.15 313.73 867.15 567.46 933.15 567.46 933.15 0 867.15 0"/></svg>
-            <div id="mobile-nav-divider" class="divider"></div>
+            <div class="divider"></div>
             <div id="mobile-nav-link-list">
                 <a id="mobile-nav-home-link" destination="home" class="mobile-nav-link">Home</a>
                 <a id="mobile-nav-projects-link" destination="projects" class="mobile-nav-link">Projects</a>
@@ -28,14 +28,13 @@
         <nav>
             <svg id="nav-logo" id="Layer_3" data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000.15 567.46"><polygon points=".43 567.46 218.23 0 289.91 0 507.7 567.46 430.88 567.46 253.62 70.13 74.68 567.46 .43 567.46"/><polygon points="867.15 0 867.15 253.73 575.15 253.73 575.15 0 508.42 0 508.15 567.46 575.15 567.46 575.15 313.73 867.15 313.73 867.15 567.46 933.15 567.46 933.15 0 867.15 0"/></svg>
             <div id="nav-link-list">
-                <a class="nav-link" destination="home" id="nav-home-link"><div class="nav-link-line"></div><p>Home</p></a>
-                <a class="nav-link" destination="projects" id="nav-projects-link"><div class="nav-link-line"></div><p>Projects</p></a>
-                <a class="nav-link" destination="contact" id="nav-contact-link"><div class="nav-link-line"></div><p>Contact</p></a>
+                <a class="nav-link" destination="home" id="nav-home-link">Home</a>
+                <a class="nav-link" destination="projects" id="nav-projects-link">Projects</a>
+                <a class="nav-link" destination="contact" id="nav-contact-link">Contact</a>
             </div>
             <svg id="nav-hamburger" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 966 723.24"><line x1="40" y1="40" x2="925.11" y2="40"></line><line x1="40.89" y1="361.62" x2="926" y2="361.62"></line><line x1="40.89" y1="683.24" x2="926" y2="683.24"></line></svg>
         </nav>
         <div class="content">
-            <script>$(".content").addClass("hidden")</script>
             <main>
                 <section id="introduction" waypoint="home">
                     <div id="name" aos="fade slow slide-down">
@@ -60,36 +59,36 @@
                         <img src="./images/projects/story-forge-preview.webp" aos="slide-right far slow" class="small project-thumbnail" alt="Story forge's anvil logo" width="512" height="512">
                         <div class="text" aos="slide-left far slow">
                             <p class="header">Story Forge</p>
-                            <div class="divider small alternate" aos="horizontal-grow slow"></div>
+                            <div class="divider" aos="horizontal-grow slow"></div>
                             <p class="description">I worked with a team to create an AI-powered web application that produces unique interactive stories for users using ChatGPT-4.</p>
-                            <div class="learn-more button alternate" projectID="storyforge">Learn more</div>
+                            <div class="button" projectID="storyforge">Learn more</div>
                         </div>
                     </div>
                     <div class="project-tile reverse">                           
                         <img src="./images/projects/creepy-hotel-hallway-preview.webp" aos="slide-left far slow" class="project-thumbnail" alt="A dark hallway" width="1280" height="720">
                         <div class="text" aos="slide-right far slow">
                             <p class="header">Procedural Dungeon Generator</p>
-                            <div class="divider small alternate" aos="horizontal-grow slow"></div>
+                            <div class="divider" aos="horizontal-grow slow"></div>
                             <p class="description">I designed and created a multiplatform desktop application that procedurally generates 3D dungeons using Unity3D and C#.</p>
-                            <div class="learn-more button alternate" projectID="dungeonGenerator">Learn more</div>
+                            <div class="button" projectID="dungeonGenerator">Learn more</div>
                         </div>
                     </div>
                     <div class="project-tile">                           
                         <img src="./images/projects/dequeue-preview.webp" aos="slide-right far slow" class="small project-thumbnail" alt="Dequeue's logo" width="512" height="512">
                         <div class="text" aos="slide-left far slow">
                             <p class="header">Remote Shortcut Manager</p>
-                            <div class="divider small alternate" aos="horizontal-grow slow"></div>
+                            <div class="divider" aos="horizontal-grow slow"></div>
                             <p class="description">I worked on a team to create an iOS application and corresponding desktop application to allow users to remotely run actions on their computer from their phone.</p>
-                            <div class="learn-more button alternate" projectID="shortcutManager">Learn more</div>
+                            <div class="button" projectID="shortcutManager">Learn more</div>
                         </div>
                     </div>
                     <div class="project-tile reverse">                           
                         <img src="./images/projects/renderer-preview.webp" aos="slide-left far slow" class="project-thumbnail" alt="An example render of the DirectX 3D renderer" width="1280" height="720">
                         <div class="text" aos="slide-right far slow">
                             <p class="header">DirectX 3D Renderer</p>
-                            <div class="divider small alternate" aos="horizontal-grow slow"></div>
+                            <div class="divider" aos="horizontal-grow slow"></div>
                             <p class="description">I created a 3D rendering application in C++ that allows users to display 3D data in real time using the DirectX and Direct3D 11 APIs.</p>
-                            <div class="learn-more button alternate" projectID="renderer">Learn more</div>
+                            <div class="button" projectID="renderer">Learn more</div>
                         </div>
                     </div>
                 </section>

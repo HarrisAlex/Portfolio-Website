@@ -36,8 +36,6 @@ function CloseMobileNav() {
 
 // Wait for page to load before showing content
 $(document).ready(function () {
-    $(".content").removeClass("hidden");
-
     // Open mobile nav if coming from another page on the site
     if (window.smallScreen()) {    
         if (document.referrer != "") {
@@ -86,7 +84,7 @@ $("#close-image-zoom").click(function() {
     closeImageZoom();
 });
 
-$(".learn-more").click(function() {
+$(".button[projectID]").click(function() {
    openProjectModal(projects[$(this).attr("projectID")]);
 });
 
@@ -126,9 +124,14 @@ $("#close-modal").click(function() {
 });
 
 function closeProjectModal() {
+    $("#project-modal").addClass("inactive");
     $("#project-modal").removeClass("active");
-    $("#close-modal").removeClass("active");
 
+    setTimeout(() => {
+        $("#project-modal").removeClass("inactive");
+        $("#close-modal").removeClass("active");
+    }, 600);
+    
     unlockScroll($("body").get(0));
 }
 
