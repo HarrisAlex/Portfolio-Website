@@ -258,7 +258,7 @@ section#introduction {
     gap: 2.5rem;
 }
 
-section#introduction #name > * {
+section#introduction p {
     font-size: var(--hero-text-size);
 }
 
