@@ -194,10 +194,10 @@ $.each(navlinks, function (indexInArray, valueOfElement) {
         let offset = 0;
         let scroll = $(waypoints[$(this).attr("destination")]).offset().top;
 
-        if ($(this).attr("destination") == "projects" || $(this).attr("destination") == "contact") {
-            offset = 50;
-        } else if ($(this).attr("destination") == "home") {
+        if ($(this).attr("destination") == "home") {
             offset = scroll;
+        } else {
+            offset = 50;
         }
 
 
