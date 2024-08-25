@@ -392,14 +392,15 @@ section#introduction p {
     z-index: 1;
 
     font-size: var(--standard-text-size);
+    text-shadow: 0 0 5px black;
 }
 
 .skill-icon-container {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 90%;
 
-    top:-100%;
+    top: -100%;
     
     z-index: 1;
 
@@ -419,6 +420,16 @@ section#introduction p {
     height: 2.5rem;
     background-color: var(--alternate-accent);
     border-radius: 32px;
+
+    mask-clip: fill-box;
+}
+
+.skill-bar-highlight {
+    height: 50%;
+    width: 100%;
+
+    backdrop-filter: brightness(150%);
+    -webkit-backdrop-filter: brightness(150%);
 }
 
 #close-modal {
@@ -448,8 +459,8 @@ section#introduction p {
     justify-content: center;
     align-items: center;
 
-    width: 100vw;
-    height: 100vh;
+    width: 100svw;
+    height: 100svh;
 
     color: var(--background);
 }
@@ -460,9 +471,9 @@ section#introduction p {
 
     overflow: hidden;
 
-    width: 70vw;
+    width: 70svw;
     height: fit-content;
-    max-height: 90vh;
+    max-height: 90svh;
 
     z-index: 1;
 
@@ -993,11 +1004,13 @@ footer {
     }
 
     #modal-content {
-        left: 2.5vw;
-        top: 10vh;
+        left: 2.5svw;
+        top: 10svh;
 
-        width: 95vw;
-        height: 80vh;
+        width: 95svw;
+        height: 80svh;
+
+        overflow-y: auto;
     }
 
     #modal-images {
@@ -1008,6 +1021,11 @@ footer {
     .image-container {
         max-width: 100%;
         height: auto;
+    }
+
+    section#contact {
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 
     #contact-form-inputs {

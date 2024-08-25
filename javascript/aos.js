@@ -62,7 +62,7 @@ $("#nav-hamburger").click(function() {
 
 $(document).ready(function() {
     animatedElements = $("[aos]");
-
+    
     for (var i = 0; i < animatedElements.length; i++) {
         $(animatedElements[i]).updateViewportVisibility();
     }
