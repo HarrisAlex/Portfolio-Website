@@ -8,7 +8,9 @@
     --accent-highlight: #912f40;
 
     --modal-background: #7026324d;
+    --modal-alt-background: #30040aab;
     --modal-shadow: #22111180;
+    --modal-alt-shadow: #11080880;
 
     --nav-height: 3.78rem;
 
@@ -814,6 +816,9 @@ footer {
     display: none;
     position: fixed;
 
+    backdrop-filter: brightness(50%) blur(24px);
+    -webkit-backdrop-filter: brightness(50%) blur(24px);
+
     top: 0;
     left: 0;
 
@@ -827,23 +832,20 @@ footer {
 }
 
 #contact-modal-content {
-    backdrop-filter: brightness(50%) blur(32px);
-    -webkit-backdrop-filter: brightness(50%) blur(32px);
-
     overflow: hidden;
 
     width: 80%;
-    height: fit-content;
-    max-height: 90%;
+    max-width: 900px;
+    height: 90%;
 
     border-radius: 16px;
 
     -ms-overflow-style: none;
     scrollbar-width: none;
 
-    background-color: var(--modal-background);
+    background-color: var(--modal-alt-background);
     border: 1px solid var(--accent);
-    box-shadow: 0px 8px 16px 0px var(--modal-shadow);
+    box-shadow: 0px 8px 16px 0px var(--modal-alt-shadow);
 
     animation-duration: 0.6s;
     animation-timing-function: var(--s-curve);
@@ -852,8 +854,23 @@ footer {
     margin: auto;
 }
 
-#contact-modal-content-wrapper {
+#contact-modal-form-wrapper {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+#contact-modal-forms {
     display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#contact-modal-content-wrapper {
+    display: grid;
     flex-direction: column;
     gap: 1rem;
 
@@ -902,6 +919,52 @@ footer {
     animation-fill-mode: both;
 }
 
+#contact-modal input, #contact-modal textarea {
+    background-color: var(--accent);
+    color: var(--text);
+}
+
+#contact-modal form {
+    display: none;
+
+    width: 100%;
+
+    animation-name: slideIn;
+    animation-duration: 0.5s;
+    animation-delay: 0.2s;
+    animation-timing-function: var(--s-curve);
+    animation-fill-mode: both;
+}
+
+#contact-modal form.active {
+    display: flex;
+}
+
+#contact-modal-submit {
+    display: none;
+
+    background-color: var(--accent);
+    border: solid 1px var(--alternate-accent);
+    color: var(--text);
+    width: fit-content;
+    padding: 0.5rem 1rem;
+
+    justify-self: center;
+
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    animation-delay: 0.2s;
+    animation-timing-function: var(--s-curve);
+    animation-fill-mode: both;
+}
+
+#contact-modal-submit:hover {
+    border: solid 1px var(--text);
+}
+
+#contact-modal-submit.active {
+    display: block;
+}
 
 /* ---Animations--- */
 @keyframes modalFadeIn {
